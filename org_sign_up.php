@@ -31,7 +31,7 @@ if(empty($username)||empty($password)||empty($orgname)||trim($username)==''||tri
     die();
 }
 //create a new user by inserting its details into the User table
-$query = "INSERT INTO Organization (OrgName, Username, Password) VALUES('$orgname', '$username', '$password')";
+$query = "INSERT INTO Organization (`OrgName`, `Username`, `Password`) VALUES('$orgname', '$username', '$password')";
 //If registration is successful, user can go to login
 if (mysqli_query($con, $query)) {
     echo "<br><a href='org_login.php'>Go to login</a><br><br><br>";
