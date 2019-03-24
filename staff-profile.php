@@ -17,10 +17,8 @@
     $todaysDate = date('Y-m-d');
 
     //Querry filters out of date bookings.
-    $query2="SELECT * FROM BookingSpace WHERE StudioID = '$studioId' AND BookingDate >= '$todaysDate'";
+    $query2="SELECT * FROM BookingSpace WHERE StudioID = '$studioId' AND BookingDate >= '$todaysDate' ORDER BY BookingDate";
     $result2=mysqli_query($con,$query2);
-    #$row2=mysqli_fetch_array($result,MYSQLI_ASSOC);
-
 ?>
 
 
@@ -30,7 +28,7 @@
     <h1>StudioShare: Staff Space</h1>
 </head>
 <body>
-    <h2>Welcome <?php echo $staffname; ?></h2>
+    <h2>Welcome, <?php echo $staffname; ?></h2>
 
     <p>Scheduled Bookings</p>
     
@@ -41,7 +39,6 @@
             <th>Configurations</th>
             <th>Creator</th>
         </tr>
-
         <?php
         //We can change this as we go.
         while($row2 = mysqli_fetch_array($result2,MYSQLI_ASSOC)){
@@ -52,9 +49,7 @@
             echo "<td>" . $row2['CreatorID'] . "</td>";
             echo "</tr>";
         }
-        
         ?>
-
     </table>
 
 </body>
