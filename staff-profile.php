@@ -4,12 +4,23 @@
  $staffusername=$_SESSION['staff-login_user'];
 
  //Searches database for submitted Username and Password
- $query="SELECT * FROM Staff WHERE Username = '$staffusername'";
- $result=mysqli_query($con,$query);
- $row=mysqli_fetch_array($result,MYSQLI_ASSOC);
+    $query="SELECT * FROM Staff WHERE Username = '$staffusername'";
+    $result=mysqli_query($con,$query);
+    $row=mysqli_fetch_array($result,MYSQLI_ASSOC);
 
-    $staffname = $row['StaffName'];
-    $orgid = $row['OrgID']
+        $staffname = $row['StaffName'];
+        $studioId = $row['StudioID'];
+
+    //Second querry to grab all the bookings associated with the staff's studio.  
+    
+    //Date settings
+    $todaysDate = date('Y-m-d');
+
+    //Querry filters out of date bookings.
+    $query2="SELECT * FROM BookingSpace WHERE StudioID = '$studioId' AND BookingDate >= '$todaysDate'";
+    $result2=mysqli_query($con,$query2);
+    #$row2=mysqli_fetch_array($result,MYSQLI_ASSOC);
+
 ?>
 
 
@@ -22,7 +33,29 @@
     <h2>Welcome <?php echo $staffname; ?></h2>
 
     <p>Scheduled Bookings</p>
+    
+    <table>
+        <tr>
+            <th>Date</th>
+            <th>Description</th>
+            <th>Configurations</th>
+            <th>Creator</th>
+        </tr>
 
+        <?php
+        //We can change this as we go.
+        while($row2 = mysqli_fetch_array($result2,MYSQLI_ASSOC)){
+            echo "<tr>";
+            echo "<td>" . $row2['BookingDate'] . "</td>";
+            echo "<td>" . $row2['BookingDescription'] . "</td>";
+            echo "<td>" . $row2['ConfigurationRequest'] . "</td>";
+            echo "<td>" . $row2['CreatorID'] . "</td>";
+            echo "</tr>";
+        }
+        
+        ?>
+
+    </table>
 
 </body>
 </html>
