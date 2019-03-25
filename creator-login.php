@@ -39,5 +39,14 @@ if($_SERVER['REQUEST_METHOD']=='POST'){
             Password: <input name="creator-password" type="password"><br><br>
             <input type="submit" value="creator-Log In"><br><br>
         </form>
+
+    <a href="creator-first-login.php" class="navbar-link">
+        <div class="navbar-link-text">First time Login</div>
+    </a>
+
+    <a href="index.php" class="navbar-link">
+        <div class="navbar-link-text">Return to Homepage</div>
+    </a>
+
     </body>
 </html>

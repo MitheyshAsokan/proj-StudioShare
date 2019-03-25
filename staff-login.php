@@ -41,5 +41,13 @@ if($_SERVER['REQUEST_METHOD']=='POST'){
             Password: <input name="staff-password" type="password"><br><br>
             <input type="submit" value="Staff-Log In"><br><br>
         </form>
+
+        <a href="staff-first-login.php" class="navbar-link">
+        <div class="navbar-link-text">First time Login</div>
+        </a>
+
+    <a href="index.php" class="navbar-link">
+        <div class="navbar-link-text">Return to Homepage</div>
+    </a>
     </body>
 </html>
