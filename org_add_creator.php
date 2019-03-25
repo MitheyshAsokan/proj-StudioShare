@@ -31,7 +31,7 @@ $start_date=mysqli_real_escape_string($con,$_POST['start_date']);
 $duration=mysqli_real_escape_string($con,$_POST['duration']);
 
 if(empty($creator_name)||empty($username)||empty($email)||empty($content_type)
-    ||empty($start_date)||empty($duration)||trim($username)==''
+    ||empty($start_date)||empty($duration)
     ||trim($creator_name)==''||trim($username)==''||trim($email)==''
     ||trim($content_type)==''||trim($start_date)==''||trim($duration)==''){
         echo 'You did not fill out the required fields.';
