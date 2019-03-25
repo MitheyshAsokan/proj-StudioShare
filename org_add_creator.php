@@ -11,7 +11,7 @@
             </select><br><br>
             <input type="submit" value="Register Creator"><br><br>
             <button type="reset" value="Reset">Clear all fields</button>
-        </form>
+        </form><br><br>
     <a href="org_creator_page.php">Return to Creator Page</a>
     </body>
 </html>
@@ -21,12 +21,7 @@
 require 'connect.php';
 require 'org_session.php';
 
-$current_org=$_SESSION['login_user'];
-echo $current_org;
-$org_name_query = "SELECT * FROM Organization WHERE Username='$current_org'";
-$row=mysqli_fetch_array($org_name_query,MYSQLI_ASSOC);
-$org_name=$row['OrgName'];
-echo $org_name;
+$org_name=$_SESSION['org_name_session'];
 $creator_name=mysqli_real_escape_string($con,$_POST['creator_name']);
 $username=mysqli_real_escape_string($con,$_POST['username']);
 $email=mysqli_real_escape_string($con,$_POST['email']);
@@ -44,7 +39,7 @@ if(empty($creator_name)||empty($username)||empty($email)||empty($content_type)
 }
 $query = "INSERT INTO Creator (`OrganizationName`, `CreatorName`, `Username`,
           `CreatorEmail`, `Password`, `ContentType`, `ContractDuration`) 
-          VALUES('$current_org', '$creator_name', '$username', '$email', '$password',
+          VALUES('$org_name', '$creator_name', '$username', '$email', '$password',
            '$content_type', '$duration')";
 
 if (mysqli_query($con, $query)) {
