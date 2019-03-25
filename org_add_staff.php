@@ -21,6 +21,7 @@
 require 'connect.php';
 require 'org_session.php';
 
+$org_id=$_SESSION['org_id_session'];
 $org_name=$_SESSION['org_name_session'];
 $staff_name=mysqli_real_escape_string($con,$_POST['staff_name']);
 $username=mysqli_real_escape_string($con,$_POST['username']);
@@ -37,9 +38,9 @@ if(empty($staff_name)||empty($username)||empty($email)||empty($position)
     echo 'You did not fill out the required fields.';
     die();
 }
-$query = "INSERT INTO Staff (`OrganizationName`, `StaffName`, `Username`,
+$query = "INSERT INTO Staff (`OrgID`, `OrganizationName`, `StaffName`, `Username`,
           `StaffEmail`, `Password`, `Position`, `StudioID`) 
-          VALUES('$org_name', '$staff_name', '$username', '$email', '$password',
+          VALUES('$org_id', '$org_name', '$staff_name', '$username', '$email', '$password',
            '$position', '$studio')";
 
 if (mysqli_query($con, $query)) {

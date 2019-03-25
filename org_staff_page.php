@@ -1,9 +1,9 @@
 <?php
 require'connect.php';
 require 'org_session.php';
-$org_name=$_SESSION['org_name_session'];
+$org_id=$_SESSION['org_id_session'];
 
-$query_staff = "SELECT * From Staff WHERE OrganizationName = '$org_name'";
+$query_staff = "SELECT * From Staff WHERE OrgID = '$org_id'";
 $staff_result = mysqli_query($con, $query_staff);
 
 if (mysqli_num_rows($staff_result) > 0){

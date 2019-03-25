@@ -1,16 +1,18 @@
 <?php
 require'connect.php';
 require 'org_session.php';
-$org_name=$_SESSION['org_name_session'];
 
-$query_creators = "SELECT * From Creator WHERE OrganizationName = '$org_name'";
+$org_id=$_SESSION['org_id_session'];
+
+$query_creators = "SELECT * From Creator WHERE OrgID = '$org_id'";
 $creator_result = mysqli_query($con, $query_creators);
 
     if (mysqli_num_rows($creator_result) > 0){
-        echo "<table><tr><th>Creator Id</th><th>Name</th><th>Username</th>
+        echo "<table><tr><th>Creator Id</th><th>Organization</th><th>Name</th><th>Username</th>
         <th>Email</th><th>Content Type</th><th>Contract Start Date</th><th>Contract Duration (Years)</th></tr>";
             while ($row = mysqli_fetch_assoc($creator_result)){
                 echo "<tr><td>".$row['CreatorID']."</td>
+                <td>".$row['OrganizationName']."</td>
                 <td>".$row['CreatorName']."</td>
                 <td>".$row['Username']."</td>
                 <td>".$row['CreatorEmail']."</td>

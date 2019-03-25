@@ -21,6 +21,7 @@
 require 'connect.php';
 require 'org_session.php';
 
+$org_id=$_SESSION['org_id_session'];
 $org_name=$_SESSION['org_name_session'];
 $creator_name=mysqli_real_escape_string($con,$_POST['creator_name']);
 $username=mysqli_real_escape_string($con,$_POST['username']);
@@ -37,9 +38,9 @@ if(empty($creator_name)||empty($username)||empty($email)||empty($content_type)
         echo 'You did not fill out the required fields.';
     die();
 }
-$query = "INSERT INTO Creator (`OrganizationName`, `CreatorName`, `Username`,
+$query = "INSERT INTO Creator (`OrgID`, `OrganizationName`, `CreatorName`, `Username`,
           `CreatorEmail`, `Password`, `ContentType`, `ContractDuration`) 
-          VALUES('$org_name', '$creator_name', '$username', '$email', '$password',
+          VALUES('$org_id', '$org_name', '$creator_name', '$username', '$email', '$password',
            '$content_type', '$duration')";
 
 if (mysqli_query($con, $query)) {

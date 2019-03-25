@@ -9,6 +9,7 @@ $row=mysqli_fetch_array($result,MYSQLI_ASSOC);
 
 $login_session=$row['username'];
 $_SESSION['org_name_session']=$row['OrgName'];
+$_SESSION['org_id_session']=$row['OrgID'];
 
 if(!isset($_SESSION['login_user'])){
     header("location:index.php");
