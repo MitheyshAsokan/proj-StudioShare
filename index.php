@@ -45,7 +45,7 @@ if($_SERVER['REQUEST_METHOD']=='POST'){
         <p>PASSWORD</p>
         <input name="password" type="password" placeholder="ENTER PASSWORD">
         <input type="submit" name="submit" value="Login">
-        <a href="org_sign_up.php">SIGN UP</a><br>
+        <a href="org_sign_up.php">Join StudioShare</a><br>
 
         <a href="creator-login.php">I am a creator</a><br>
         <a href="staff-login.php">I am staff</a>

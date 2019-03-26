@@ -37,7 +37,7 @@ if($_SERVER['REQUEST_METHOD']=='POST'){
         <form action="" method="post">
             Username: <input name="creator-username" type="text"><br><br>
             Password: <input name="creator-password" type="password"><br><br>
-            <input type="submit" value="creator-Log In"><br><br>
+            <input type="submit" value="Creator Login"><br><br>
         </form>
 
     <a href="creator-first-login.php" class="navbar-link">
