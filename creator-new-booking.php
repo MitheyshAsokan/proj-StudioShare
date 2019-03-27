@@ -9,11 +9,11 @@
 
  $creatorname = $row['CreatorName'];
  $creatorId = $row['CreatorID'];
+ $orgId = $row['OrgID'];
 
  session_start();
  $_SESSION['CreatorID'] = $creatorId;
-
- $orgId = $row['OrgID'];
+ $_SESSION['OrgID'] = $orgId;
 
     //Date settings
     $todaysDate = date('Y-m-d');

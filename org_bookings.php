@@ -1,5 +1,5 @@
 <?php
-    require'connect.php';
+    require 'connect.php';
     require 'org_session.php';
 
     $org_id=$_SESSION['org_id_session'];
