@@ -8,6 +8,7 @@
         <form action="" method="post">
             Enter your Username: <input name="creator-username" type="text"><br><br>
             Enter a preffered password: <input name="creator-password" type="password"><br><br>
+            Confirm password: <input name="confirm-password" type="password"><br><br>
             <input type="submit" value="Update Password"><br><br>
         </form>
 
@@ -30,6 +31,9 @@ session_start();
 if($_SERVER['REQUEST_METHOD']=='POST'){
     $creatorusername=mysqli_real_escape_string($con,$_POST['creator-username']);
     $creatorpassword=mysqli_real_escape_string($con,$_POST['creator-password']);
+    $confirmpassword=mysqli_real_escape_string($con,$_POST['confirm-password']);
+
+    
 
     //Searches database for submitted Username and Password
     $query="SELECT * FROM Creator WHERE Username = '$creatorusername' AND Password = 'password'";

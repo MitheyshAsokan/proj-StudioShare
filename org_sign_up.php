@@ -15,8 +15,8 @@
     <button type="reset" value="Reset">Clear all fields</button>
 </form>
 
-<p>If you already have an account, <a href='org_login.php'>Login</a></p><br>
-<a href='index.php'>Return to home page</a><br>
+<p>If you already have an StudioShare account, click on
+<a href='index.php'>Sign In</a><br>
 
 <?php
 
@@ -34,11 +34,10 @@ if(empty($username)||empty($password)||empty($orgname)||trim($username)==''||tri
 $query = "INSERT INTO Organization (`OrgName`, `Username`, `Password`) VALUES('$orgname', '$username', '$password')";
 //If registration is successful, user can go to login
 if (mysqli_query($con, $query)) {
-    echo "<br><a href='org_login.php'>Go to login</a><br><br><br>";
     echo "$username added successfully.";
 }
 else {
-    echo 'That organization name is already taken.';
+    echo 'Username is not available.';
 }
 
 mysqli_close($con);
