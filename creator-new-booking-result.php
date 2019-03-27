@@ -27,6 +27,7 @@ require 'connect.php';
 $creatorId=$_SESSION['CreatorID'];
 $studioSelection = $_SESSION['StudioSelection'];
 $spaceSelection = $_SESSION['SpaceSelection'];
+$orgID = $_SESSION['OrgID'];
 
 $bookingDescription = $_POST['bookingDescription'];
 $configReq = $_POST['configReq'];
@@ -57,7 +58,7 @@ if($count===1){
 }
 else{
     //create a new booking by inserting its details into the BookingSpace table
-    $query2 = "INSERT INTO BookingSpace (StudioID, SpaceID, CreatorID, BookingDate, BookingDescription, ConfigurationRequest) VALUES('$studioSelection', '$spaceSelection', '$creatorId', '$date', '$bookingDescription', '$configReq')";
+    $query2 = "INSERT INTO BookingSpace (OrgID, StudioID, SpaceID, CreatorID, BookingDate, BookingDescription, ConfigurationRequest) VALUES('$orgID', '$studioSelection', '$spaceSelection', '$creatorId', '$date', '$bookingDescription', '$configReq')";
     //If registration is successful, user can go to login
 
     #echo $studioSelection . " " . $spaceSelection . " " . $creatorId . " " . $date . " " . $bookingDescription . " " . $configReq;
