@@ -35,7 +35,7 @@ if($_SERVER['REQUEST_METHOD']=='POST'){
     <body>
         <h1>Creator Login Page</h1>
 
-        <p>Type in your credentials</p>
+        <p>Enter your Credentials</p>
 
         <form action="" method="post">
             Username: <input name="creator-username" type="text"><br><br>
