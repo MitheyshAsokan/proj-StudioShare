@@ -14,7 +14,7 @@
         </form>
 
     <a href="creator-login.php" class="navbar-link">
-        <div class="navbar-link-text">Return to Login</div>
+        <div class="navbar-link-text">Return to Creator Login</div>
     </a>
 
     <a href="index.php" class="navbar-link">
