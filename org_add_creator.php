@@ -3,8 +3,8 @@
         <h1>Create New Creator Profile</h1>
         <form action="" method="post">
             Creator Name: <input name="creator_name" type="text"><br><br>
-            Username: <input name="username" type="text"<br><br>
-            Content Type: <input name="content_type" type="text"<br><br>
+            Username: <input name="username" type="text"><br><br>
+            Content Type: <input name="content_type" type="text"><br><br>
             Start Date: <input name="start_date" type="date"><br><br>
             Contract Duration (Years): <input name="duration" type="number"><br><br>
             </select><br><br>
@@ -36,10 +36,10 @@ if(empty($creator_name)||empty($username)||empty($content_type)
         echo 'You did not fill out the required fields.';
     die();
 }
-$query = "INSERT INTO Creator (`OrgID`, `OrganizationName`, `CreatorName`, `Username`,
-          `Password`, `ContentType`, `ContractDuration`) 
-          VALUES('$org_id', '$org_name', '$creator_name', '$username', '$password',
-           '$content_type', '$duration')";
+$query = "INSERT INTO Creator (OrgID, OrganizationName, CreatorName, Username,
+          Password, ContentType, ContractStartDate, ContractDuration) 
+          VALUES('$org_id', '$org_name', '$creator_name', '$username', '$password', 
+           '$content_type', '$start_date','$duration')";
 
 if (mysqli_query($con, $query)) {
     echo "$username added successfully.";
