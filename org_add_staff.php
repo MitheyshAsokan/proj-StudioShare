@@ -1,6 +1,6 @@
 <html>
 <body>
-<h1>Create New Creator Profile</h1>
+<h1>Create New Staff Profile</h1>
 <form action="" method="post">
     Staff Name: <input name="staff_name" type="text"><br><br>
     Username: <input name="username" type="text"<br><br>
