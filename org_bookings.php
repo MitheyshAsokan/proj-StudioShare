@@ -15,6 +15,8 @@
 
     $query2="SELECT * FROM BookingSpace WHERE OrgID = '$orgId' AND BookingDate >= '$todaysDate' ORDER BY BookingDate";
     $result2=mysqli_query($con,$query2);
+    $query3="SELECT BookingDate, StudioName, SpaceName, CreatorName, BookingDescription, ConfigurationRequest FROM BookingSpace JOIN Studio JOIN Space JOIN Creator Where BookingSpace.StudioID = Studio.StudioID AND BookingSpace.SpaceID = Space.SpaceID AND BookingSpace.CreatorID = Creator.CreatorID Order By BookingDate"
+    $result3=mysqli_query($con,$query3);
 ?>
 
 
@@ -30,27 +32,23 @@
 <table>
         <tr>
             <th>Date</th>
-            <th>Studio</th>
-            <th></th>
-            <th>Space</th>
-            <th></th>
+            <th>Studio      </th>
+            <th>Space     </th>
             <th>Creator</th>
             <th>Description</th>
             <th>Configurations</th>
         </tr>
         <?php
         //We can change this as we go.
-        while($row2 = mysqli_fetch_array($result2,MYSQLI_ASSOC)){
+        while($row3 = mysqli_fetch_array($result3,MYSQLI_ASSOC)){
 
-
-            
             echo "<tr>";
-            echo "<td>" . $row2['BookingDate'] . "</td>";
-            echo "<td>" . $row2['StudioName'] . "</td>";
-            echo "<td>" . $row2['SpaceName'] . "</td>";
-            echo "<td>" . $row2['CreatorName'] . "</td>";
-            echo "<td>" . $row2['BookingDescription'] . "</td>";
-            echo "<td>" . $row2['ConfigurationRequest'] . "</td>";
+            echo "<td>" . $row3['BookingDate'] . "</td>";
+            echo "<td>" . $row3['StudioName'] . "</td>";
+            echo "<td>" . $row3['SpaceName'] . "</td>";
+            echo "<td>" . $row3['CreatorName'] . "</td>";
+            echo "<td>" . $row3['BookingDescription'] . "</td>";
+            echo "<td>" . $row3['ConfigurationRequest'] . "</td>";
             echo "</tr>";
         }
         ?>
