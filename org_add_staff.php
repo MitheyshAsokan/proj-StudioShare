@@ -36,10 +36,10 @@ if(empty($staff_name)||empty($username)||empty($position)
     echo 'You did not fill out the required fields.';
     die();
 }
-$query = "INSERT INTO Staff (`OrgID`, `OrganizationName`, `StaffName`, `Username`,
-          `Password`, `Position`, `StudioID`) 
+$query = "INSERT INTO Staff (OrgID, OrganizationName, StaffName, Username,
+          Password, Position, StartDate, StudioID) 
           VALUES('$org_id', '$org_name', '$staff_name', '$username', '$password',
-           '$position', '$studio')";
+           '$position', '$start_date' '$studio')";
 
 if (mysqli_query($con, $query)) {
     echo "$username added successfully.";
