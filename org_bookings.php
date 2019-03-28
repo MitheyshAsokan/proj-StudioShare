@@ -15,7 +15,7 @@
 
     $query2="SELECT * FROM BookingSpace WHERE OrgID = '$orgId' AND BookingDate >= '$todaysDate' ORDER BY BookingDate";
     $result2=mysqli_query($con,$query2);
-    $query3="SELECT BookingDate, StudioName, SpaceName, CreatorName, BookingDescription, ConfigurationRequest FROM BookingSpace JOIN Studio JOIN Space JOIN Creator Where BookingSpace.StudioID = Studio.StudioID AND BookingSpace.SpaceID = Space.SpaceID AND BookingSpace.CreatorID = Creator.CreatorID Order By BookingDate"
+    $query3="SELECT BookingDate, StudioName, SpaceName, CreatorName, BookingDescription, ConfigurationRequest FROM BookingSpace JOIN Studio JOIN Space JOIN Creator Where BookingSpace.StudioID = Studio.StudioID AND BookingSpace.SpaceID = Space.SpaceID AND BookingSpace.CreatorID = Creator.CreatorID Order By BookingDate";
     $result3=mysqli_query($con,$query3);
 ?>
 
@@ -32,8 +32,8 @@
 <table>
         <tr>
             <th>Date</th>
-            <th>Studio      </th>
-            <th>Space     </th>
+            <th>Studio</th>
+            <th>Space</th>
             <th>Creator</th>
             <th>Description</th>
             <th>Configurations</th>
