@@ -9,7 +9,7 @@
     $row=mysqli_fetch_array($result,MYSQLI_ASSOC);
     $orgId = $row['OrgID'];
 
-    //Date Settings
+    //Date Settings.
     $todaysDate = date('Y-m-d');
 
 
