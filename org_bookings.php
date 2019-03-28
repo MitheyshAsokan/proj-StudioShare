@@ -9,6 +9,7 @@
     $row=mysqli_fetch_array($result,MYSQLI_ASSOC);
     $orgId = $row['OrgID'];
 
+    //Date Settings
     $todaysDate = date('Y-m-d');
 
 
@@ -30,7 +31,9 @@
         <tr>
             <th>Date</th>
             <th>Studio</th>
+            <th></th>
             <th>Space</th>
+            <th></th>
             <th>Creator</th>
             <th>Description</th>
             <th>Configurations</th>
@@ -39,29 +42,13 @@
         //We can change this as we go.
         while($row2 = mysqli_fetch_array($result2,MYSQLI_ASSOC)){
 
-            $studioId = row2['StudioID'];
-            $studioNameQuery = "SELECT StudioName FROM Studio WHERE StudioID = '$studioId'";
-            $result3 = mysqli_query($con,$studioNameQuery);
-            $row3 = mysqli_fetch_array($result3,MYSQLI_ASSOC);
-            $studioName = $row3['StudioName'];
 
-            $spaceId = row2['SpaceID'];
-            $spaceNameQuery = "SELECT SpaceName FROM Space WHERE SpaceID = '$spaceID'";
-            $result5 = mysqli_query($con,$spaceNameQuery);
-            $row5 = mysqli_fetch_array($result5,MYSQLI_ASSOC);
-            $spaceName = $row5['SpaceName'];
-
-            $creatorId = row2['CreatorID'];
-            $creatorNameQuery = "SELECT CreatorName FROM Creator WHERE CreatorID = '$creatorId";
-            $result4 = mysqli_query($con,$creatorNameQuery);
-            $row4 = mysqli_fetch_array($result4,MYSQLI_ASSOC);
-            $creatorName = $row4['CreatorName'];
             
             echo "<tr>";
             echo "<td>" . $row2['BookingDate'] . "</td>";
-            echo "<td>" . $studioName . "</td>";
-            echo "<td>" . $spaceName . "</td>";
-            echo "<td>" . $creatorName . "</td>";
+            echo "<td>" . $row2['StudioName'] . "</td>";
+            echo "<td>" . $row2['SpaceName'] . "</td>";
+            echo "<td>" . $row2['CreatorName'] . "</td>";
             echo "<td>" . $row2['BookingDescription'] . "</td>";
             echo "<td>" . $row2['ConfigurationRequest'] . "</td>";
             echo "</tr>";
