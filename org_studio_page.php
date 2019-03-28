@@ -4,25 +4,22 @@ require 'org_session.php';
 
 $org_id=$_SESSION['org_id_session'];
 
-$query_creators = "SELECT * From Creator WHERE OrgID = '$org_id'";
-$creator_result = mysqli_query($con, $query_creators);
+$query_studios = "SELECT * From Studio WHERE OrgID = '$org_id'";
+$studio_result = mysqli_query($con, $query_studios);
 
-if (mysqli_num_rows($creator_result) > 0){
-    echo "<table><tr><th>Creator Id</th><th>Organization</th><th>Name</th><th>Username</th>
-        <th>Content Type</th><th>Contract Start Date</th><th>Contract Duration (Years)</th></tr>";
-    while ($row = mysqli_fetch_assoc($creator_result)){
-        echo "<tr><td>".$row['CreatorID']."</td>
-                <td>".$row['OrganizationName']."</td>
-                <td>".$row['CreatorName']."</td>
-                <td>".$row['Username']."</td>
-                <td>".$row['ContentType']."</td>
-                <td>".$row['ContractStartDate']."</td>
-                <td>".$row['ContractDuration']."</td></tr>";
+if (mysqli_num_rows($studio_result) > 0){
+    echo "<table><tr><th>Studio Id</th><th>Studio Name</th><th>Studio Address</th>
+        <th>Studio Description</th></tr>";
+    while ($row = mysqli_fetch_assoc($studio_result)){
+        echo "<tr><td>".$row['StudioID']."</td>
+                <td>".$row['StudioName']."</td>
+                <td>".$row['StudioAddress']."</td>
+                <td>".$row['StudioDescription']."</td></tr>";
     }
     echo "</table>";
 }
 else{
-    echo "There are currently no creators under this organization.";
+    echo "There are currently no studios under this organization.";
 }
 ?>
 <html>
