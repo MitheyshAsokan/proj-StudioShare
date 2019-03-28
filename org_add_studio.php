@@ -30,9 +30,9 @@ if(empty($studio_name)||empty($studio_address)||empty($studio_desc)
     die();
 }
 $query = "INSERT INTO Studio (`OrgID`, `OrganizationName`, `StudioName`,
- `        StudioAddress`, `StudioDescription`) 
+          `StudioAddress`, `StudioDescription`) 
           VALUES('$org_id', '$org_name', '$studio_name',
-          '$studio_adress', '$studio_desc')";
+          '$studio_address', '$studio_desc')";
 
 if (mysqli_query($con, $query)) {
     echo "$studio_name added successfully.";
