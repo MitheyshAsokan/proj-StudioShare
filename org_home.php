@@ -10,7 +10,7 @@ $current_user=$_SESSION['login_user'];
 <body style="margin: 5px;">
 <h1><?php echo $current_user; ?>'s Profile</h1>
 <div class="navbar">
-    <a href="org_studio.php" class="navbar-link">
+    <a href="org_studio_page.php" class="navbar-link">
         <div class="navbar-link-text">Studios</div>
     </a>
     <a href="org_creator_page.php" class="navbar-link">
@@ -19,7 +19,7 @@ $current_user=$_SESSION['login_user'];
     <a href="org_staff_page.php" class="navbar-link">
         <div class="navbar-link-text">Staff</div>
     </a>
-    <a href="trusted_sellers.php" class="navbar-link">
+    <a href="org_bookings.php" class="navbar-link">
         <div class="navbar-link-text">Bookings</div>
     </a>
     <a href="logout.php" class="navbar-link">

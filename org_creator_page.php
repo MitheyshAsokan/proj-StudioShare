@@ -9,13 +9,12 @@ $creator_result = mysqli_query($con, $query_creators);
 
     if (mysqli_num_rows($creator_result) > 0){
         echo "<table><tr><th>Creator Id</th><th>Organization</th><th>Name</th><th>Username</th>
-        <th>Email</th><th>Content Type</th><th>Contract Start Date</th><th>Contract Duration (Years)</th></tr>";
+        <th>Content Type</th><th>Contract Start Date</th><th>Contract Duration (Years)</th></tr>";
             while ($row = mysqli_fetch_assoc($creator_result)){
                 echo "<tr><td>".$row['CreatorID']."</td>
                 <td>".$row['OrganizationName']."</td>
                 <td>".$row['CreatorName']."</td>
                 <td>".$row['Username']."</td>
-                <td>".$row['CreatorEmail']."</td>
                 <td>".$row['ContentType']."</td>
                 <td>".$row['ContractStartDate']."</td>
                 <td>".$row['ContractDuration']."</td></tr>";
