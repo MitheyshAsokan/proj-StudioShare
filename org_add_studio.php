@@ -9,7 +9,7 @@
     <input type="submit" value="Add Studio Space"><br><br>
     <button type="reset" value="Reset">Clear all fields</button>
 </form><br><br>
-<a href="org_creator_page.php">Return to Creator Page</a>
+<a href="org_studio_page.php">Return to Studio Page</a>
 </body>
 </html>
 
