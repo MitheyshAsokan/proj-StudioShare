@@ -10,7 +10,7 @@ $current_user=$_SESSION['login_user'];
 <body style="margin: 5px;">
 <h1><?php echo $current_user; ?>'s Profile</h1>
 <div class="navbar">
-    <a href="profile.php" class="navbar-link">
+    <a href="org_studio.php" class="navbar-link">
         <div class="navbar-link-text">Studios</div>
     </a>
     <a href="org_creator_page.php" class="navbar-link">
