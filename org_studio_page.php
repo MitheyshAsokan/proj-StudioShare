@@ -19,7 +19,7 @@ if (mysqli_num_rows($studio_result) > 0){
                 <td>".$row['StudioName']."</td>
                 <td>".$row['StudioAddress']."</td>
                 <td>".$row['StudioDescription']."</td>
-                <td><a href=org_resource_page.php?studio_id=".$row['StudioID'].">"."Go to Studio Page</a></td>
+                <td><a href=org_resource_page.php?studio_id=".$row['StudioID'].">"."View resources and spaces</a></td>
               </tr>";
     }
     echo "</table>";
@@ -30,7 +30,7 @@ else{
 ?>
 <html>
     <body>
-        <a href='org_add_studio.php'>Add New Studio Space</a><br><br>
+        <a href='org_add_studio.php'>Add New Studio</a><br><br>
         <a href="org_home.php">Return to Organization Home Page</a>
     </body>
 </html>
