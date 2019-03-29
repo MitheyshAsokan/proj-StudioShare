@@ -10,7 +10,7 @@
     <input type="submit" value="Add Resource"><br><br>
     <button type="reset" value="Reset">Clear all fields</button>
 </form><br><br>
-<a href="org_resource_page.php.php">Return to Resource Page</a>
+<a href="org_resource_page.php">Return to Resource Page</a>
 </body>
 </html>
 
