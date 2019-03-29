@@ -17,7 +17,9 @@ $creator_result = mysqli_query($con, $query_creators);
                 <td>".$row['Username']."</td>
                 <td>".$row['ContentType']."</td>
                 <td>".$row['ContractStartDate']."</td>
-                <td>".$row['ContractDuration']."</td></tr>";
+                <td>".$row['ContractDuration']."</td>
+                <td><a href='edit_org_creator.php'>Edit</a></td>
+                <td><a href='deleted_org_creator.php'>Delete</a></td></tr>";
             }
         echo "</table>";
     }
