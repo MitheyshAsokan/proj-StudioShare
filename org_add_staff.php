@@ -3,8 +3,8 @@
 <h1>Create New Staff Profile</h1>
 <form action="" method="post">
     Staff Name: <input name="staff_name" type="text"><br><br>
-    Username: <input name="username" type="text"<br><br>
-    Position: <input name="position" type="text"<br><br>
+    Username: <input name="username" type="text"><br><br>
+    Position: <input name="position" type="text"><br><br>
     Start Date: <input name="start_date" type="date"><br><br>
     Studio Number: <input name="studio" type="number"><br><br>
     </select><br><br>
@@ -39,7 +39,7 @@ if(empty($staff_name)||empty($username)||empty($position)
 $query = "INSERT INTO Staff (OrgID, OrganizationName, StaffName, Username,
           Password, Position, StartDate, StudioID) 
           VALUES('$org_id', '$org_name', '$staff_name', '$username', '$password',
-           '$position', '$start_date' '$studio')";
+           '$position', '$start_date', '$studio')";
 
 if (mysqli_query($con, $query)) {
     echo "$username added successfully.";
