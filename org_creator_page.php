@@ -18,14 +18,26 @@ $creator_result = mysqli_query($con, $query_creators);
                 <td>".$row['ContentType']."</td>
                 <td>".$row['ContractStartDate']."</td>
                 <td>".$row['ContractDuration']."</td>
-                <td><a href='edit_org_creator.php'>Edit</a></td>
-                <td><a href='delete_org_creator.php'>Delete</a></td></tr>";
+                <td><form action='' method='post'>
+                <input type='hidden' name='id' value='$row[CreatorID]'>
+                <input type='submit' name='delete_creator' value='Delete'></form></td></tr>";
+
             }
         echo "</table>";
     }
     else{
         echo "There are currently no creators under this organization.";
     }
+if(isset($_POST['delete_creator'])) {
+    $to_delete = $_POST['id'];
+    $delete_item = "DELETE FROM Creator WHERE CreatorID='$to_delete'";
+    echo "<meta http-equiv='refresh' content='1'>";
+    if (mysqli_query($con, $delete_item)) {
+        echo "Creator successfully deleted.";
+    } else {
+        echo "Error deleting creator.";
+    }
+}
 ?>
 <html>
     <body>
@@ -33,3 +45,4 @@ $creator_result = mysqli_query($con, $query_creators);
         <a href="org_home.php">Return to Organization Home Page</a>
     </body>
 </html>
+
