@@ -20,8 +20,8 @@ $creator_result = mysqli_query($con, $query_creators);
                 <td>".$row['ContractDuration']."</td>
                 <td><form action='' method='post'>
                 <input type='hidden' name='id' value='$row[CreatorID]'>
-                <input type='submit' name='delete_creator' value='Delete'></form></td></tr>";
-
+                <input type='submit' name='delete_creator' value='Delete'>
+                <a href=org_update_creator.php?creator_id=".$row['CreatorID'].">Edit</a></form></td></tr>";
             }
         echo "</table>";
     }
@@ -38,6 +38,7 @@ if(isset($_POST['delete_creator'])) {
         echo "Error deleting creator.";
     }
 }
+
 ?>
 <html>
     <body>
