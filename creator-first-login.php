@@ -8,7 +8,7 @@
 
         <form action="" method="post">
             Enter your Username: <input name="creator-username" type="text"><br><br>
-            Enter a preffered password: <input name="creator-password" type="password"><br><br>
+            Enter New Password: <input name="creator-password" type="password"><br><br>
             Confirm password: <input name="confirm-password" type="password"><br><br>
             <input type="submit" value="Update Password"><br><br>
         </form>

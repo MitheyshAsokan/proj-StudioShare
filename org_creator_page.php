@@ -8,8 +8,15 @@ $query_creators = "SELECT * From Creator WHERE OrgID = '$org_id'";
 $creator_result = mysqli_query($con, $query_creators);
 
     if (mysqli_num_rows($creator_result) > 0){
-        echo "<table><tr><th>Creator Id</th><th>Organization</th><th>Name</th><th>Username</th>
-        <th>Content Type</th><th>Contract Start Date</th><th>Contract Duration (Years)</th></tr>";
+        echo "<table><tr>
+                <th>Creator Id</th>
+                <th>Organization</th>
+                <th>Name</th>
+                <th>Username</th>
+                <th>Content Type</th>
+                <th>Contract Start Date</th>
+                <th>Contract Duration (Years)</th>
+                </tr>";
             while ($row = mysqli_fetch_assoc($creator_result)){
                 echo "<tr><td>".$row['CreatorID']."</td>
                 <td>".$row['OrganizationName']."</td>
@@ -21,7 +28,8 @@ $creator_result = mysqli_query($con, $query_creators);
                 <td><form action='' method='post'>
                 <input type='hidden' name='id' value='$row[CreatorID]'>
                 <input type='submit' name='delete_creator' value='Delete'>
-                <a href=org_update_creator.php?creator_id=".$row['CreatorID'].">Edit</a></form></td></tr>";
+                <a href=org_update_creator.php?creator_id=".$row['CreatorID'].">Edit</a>
+                </form></td></tr>";
             }
         echo "</table>";
     }

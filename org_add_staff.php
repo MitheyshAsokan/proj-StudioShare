@@ -28,7 +28,7 @@ $password="password";
 $position=mysqli_real_escape_string($con,$_POST['position']);
 $start_date=mysqli_real_escape_string($con,$_POST['start_date']);
 $studio=mysqli_real_escape_string($con,$_POST['studio']);
-
+$first_login="Yes";
 if(empty($staff_name)||empty($username)||empty($position)
     ||empty($start_date)||empty($studio)
     ||trim($staff_name)==''||trim($username)==''
@@ -37,9 +37,9 @@ if(empty($staff_name)||empty($username)||empty($position)
     die();
 }
 $query = "INSERT INTO Staff (OrgID, OrganizationName, StaffName, Username,
-          Password, Position, StartDate, StudioID) 
+          Password, Position, StartDate, StudioID, FIrstTimeLogin) 
           VALUES('$org_id', '$org_name', '$staff_name', '$username', '$password',
-           '$position', '$start_date', '$studio')";
+           '$position', '$start_date', '$studio', '$first_login')";
 
 if (mysqli_query($con, $query)) {
     echo "$username added successfully.";

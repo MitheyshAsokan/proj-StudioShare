@@ -47,11 +47,9 @@ if($_SERVER['REQUEST_METHOD']=='POST'){
         <input type="submit" name="submit" value="Login">
         <a href="org_sign_up.php">Join StudioShare</a><br>
 
-        <a href="creator-login.php">I am a creator</a><br>
-        <a href="staff-login.php">I am staff</a>
-
+        <a href="creator-login.php">Log in as creator</a><br>
+        <a href="staff-login.php">Log in as staff</a>
     </form>
-
 </div>
 </body>
 </html>
