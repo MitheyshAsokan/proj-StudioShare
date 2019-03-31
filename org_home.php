@@ -19,7 +19,7 @@ $current_user=$_SESSION['login_user'];
     <a href="org_staff_page.php" class="navbar-link">
         <div class="navbar-link-text">Staff</div>
     </a>
-    <a href="trusted_sellers.php" class="navbar-link">
+    <a href="org_bookings.php" class="navbar-link">
         <div class="navbar-link-text">Bookings</div>
     </a>
     <a href="logout.php" class="navbar-link">
