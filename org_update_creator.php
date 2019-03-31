@@ -8,7 +8,7 @@
             Start Date: <input name="start_date" type="date"><br><br>
             Contract Duration (Years): <input name="duration" type="number"><br><br>
             </select><br><br>
-            <input type="submit" value="Register Creator"><br><br>
+            <input type="submit" value="Update Creator"><br><br>
             <button type="reset" value="Reset">Clear all fields</button>
         </form><br><br>
     <a href="org_creator_page.php">Return to Creator Page</a>
