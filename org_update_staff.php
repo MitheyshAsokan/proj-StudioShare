@@ -40,7 +40,7 @@ if(empty($staff_name)||empty($username)||empty($position)
 $query = "UPDATE Staff SET StaffName = '$staff_name', Username = '$username', Position = '$position', StartDate = '$start_date' WHERE StaffID = '$staff_id'";
 
 if (mysqli_query($con, $query)) {
-    echo "$username added successfully.";
+    echo "$username updated successfully.";
 }
 else {
     echo mysqli_error($con);

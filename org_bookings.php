@@ -49,8 +49,6 @@
             echo "<td>" . $row3['CreatorName'] . "</td>";
             echo "<td>" . $row3['BookingDescription'] . "</td>";
             echo "<td>" . $row3['ConfigurationRequest'] . "</td>";
-            
-
             echo "</tr>";
         }
         ?>

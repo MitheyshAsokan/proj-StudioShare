@@ -40,7 +40,7 @@ if(empty($creator_name)||empty($username)||empty($content_type)
 $query = "UPDATE Creator SET CreatorName = '$creator_name', Username = '$username', ContentType='$content_type', ContractStartDate='$start_date', ContractDuration='$duration' WHERE CreatorID='$creator_id'";
 
 if (mysqli_query($con, $query)) {
-    echo "$username added successfully.";
+    echo "$username updated successfully.";
 }
 else {
     echo mysqli_error($con);
