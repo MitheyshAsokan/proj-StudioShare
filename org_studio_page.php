@@ -41,7 +41,7 @@ if(isset($_POST['delete_studio'])) {
     if (mysqli_query($con, $delete_studio)) {
         echo "Studio successfully deleted.";
     } else {
-        echo "Error deleting creator.";
+        echo "Error deleting studio.";
     }
 }
 

@@ -24,13 +24,31 @@ if (mysqli_num_rows($resources_result) > 0){
                 <td>".$row['ResourceType']."</td>
                 <td>".$row['ResourceDescription']."</td>
                 <td>".$row['UnitsAvailable']."</td>
-              </tr>";
+                <td><form action='' method='post'>
+                <input type='hidden' name='resource_id' value='$row[ResourceID]'>
+                <input type='submit' name='delete_resource' value='Delete'>
+                <a href=org_update_resource.php?resource_id=
+                    ".$row['ResourceID']."
+                >Edit</a>
+                </form></td></tr>";
     }
     echo "</table>";
 }
 else{
     echo "There are currently no resources assigned to this studio";
 }
+
+if(isset($_POST['delete_resource'])) {
+    $to_delete = $_POST['resource_id'];
+    $delete_resource = "DELETE FROM Resources WHERE ResourceID='$to_delete'";
+    echo "<meta http-equiv='refresh' content='1'>";
+    if (mysqli_query($con, $delete_resource)) {
+        echo "Resource successfully deleted.";
+    } else {
+        echo "Error deleting Resource.";
+    }
+}
+
 echo "<a href=org_add_resource_page.php?studio_id="
     .$studio_id.">".
     "Add resources to studio</a>";
@@ -50,7 +68,11 @@ if (mysqli_num_rows($space_result) > 0){
                 <td>".$row['SpaceName']."</td>
                 <td>".$row['SpaceDescription']."</td>
                 <td>".$row['SpaceType']."</td>
-              </tr>";
+                <td><form action='' method='post'>
+                <input type='hidden' name='space_id' value='$row[SpaceID]'>
+                <input type='submit' name='delete_space' value='Delete'>
+                <a href=org_update_space.php?resource_id=".$row['SpaceID'].">Edit</a>
+                </form></td></tr>";
     }
     echo "</table>";
 }
