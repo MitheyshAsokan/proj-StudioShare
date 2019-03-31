@@ -37,10 +37,16 @@ if(empty($creator_name)||empty($username)||empty($content_type)
         echo 'You did not fill out the required fields.';
     die();
 }
-$query = "UPDATE Creator SET CreatorName = '$creator_name', Username = '$username', ContentType='$content_type', ContractStartDate='$start_date', ContractDuration='$duration' WHERE CreatorID='$creator_id'";
+$query = "UPDATE Creator SET 
+          CreatorName = '$creator_name', 
+          Username = '$username', 
+          ContentType='$content_type', 
+          ContractStartDate='$start_date', 
+          ContractDuration='$duration' 
+          WHERE CreatorID='$creator_id'";
 
 if (mysqli_query($con, $query)) {
-    echo "$username added successfully.";
+    echo "$username updated successfully.";
 }
 else {
     echo mysqli_error($con);

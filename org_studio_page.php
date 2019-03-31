@@ -14,7 +14,7 @@ if (mysqli_num_rows($studio_result) > 0){
                      <th>Studio Description</th>
                      </tr>";
     while ($row = mysqli_fetch_assoc($studio_result)){
-        echo "<tr>
+        echo "<td>
                 <td>".$row['StudioID']."</td>
                 <td>".$row['StudioName']."</td>
                 <td>".$row['StudioAddress']."</td>
@@ -22,13 +22,29 @@ if (mysqli_num_rows($studio_result) > 0){
                 <td><a href=org_resource_page.php?studio_id="
                     .$row['StudioID'].
                 ">View resources and spaces</a></td>
-              </tr>";
+                <td><form action='' method='post'>
+                <input type='hidden' name='studio_id' value='$row[StudioID]'>
+                <input type='submit' name='delete_studio' value='Delete'>
+                <a href=org_update_studio.php?studio_id=".$row['StudioID'].">Edit</a>
+                </form></td></tr>";
     }
     echo "</table>";
 }
 else{
     echo "There are currently no studios under this organization.";
 }
+
+if(isset($_POST['delete_studio'])) {
+    $to_delete = $_POST['studio_id'];
+    $delete_studio = "DELETE FROM Studio WHERE StudioID='$to_delete'";
+    echo "<meta http-equiv='refresh' content='1'>";
+    if (mysqli_query($con, $delete_studio)) {
+        echo "Studio successfully deleted.";
+    } else {
+        echo "Error deleting creator.";
+    }
+}
+
 ?>
 <html>
     <body>
