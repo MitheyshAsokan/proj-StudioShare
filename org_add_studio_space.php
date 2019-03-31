@@ -9,10 +9,9 @@
     Y Dimension: <input name="y_dim" type="number"><br><br>
     Z Dimension: <input name="z_dim" type="number"><br><br>
     </select><br><br>
-    <input type="submit" value="Add Resource"><br><br>
+    <input type="submit" value="Add Space"><br><br>
     <button type="reset" value="Reset">Clear all fields</button>
 </form><br><br>
-<a href="org_resource_page.php">Return to Studio Space/Resource Page</a>
 </body>
 </html>
 
@@ -24,6 +23,10 @@ require 'org_session.php';
 $studio_id = mysqli_real_escape_string($con, $_GET['studio_id']);
 $org_id=$_SESSION['org_id_session'];
 $org_name=$_SESSION['org_name_session'];
+
+echo "<a href=org_resource_page.php?studio_id="
+    .$studio_id.">".
+    "Return to resource page</a>";
 
 $space_name=mysqli_real_escape_string($con,$_POST['space_name']);
 $space_type=mysqli_real_escape_string($con,$_POST['space_type']);
@@ -65,7 +68,6 @@ if (mysqli_query($con, $query)) {
 }
 else {
     echo mysqli_error($con);
-    echo 'That space name is already taken.';
 }
 
 mysqli_close($con);

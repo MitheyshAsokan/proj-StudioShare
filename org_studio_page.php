@@ -19,7 +19,9 @@ if (mysqli_num_rows($studio_result) > 0){
                 <td>".$row['StudioName']."</td>
                 <td>".$row['StudioAddress']."</td>
                 <td>".$row['StudioDescription']."</td>
-                <td><a href=org_resource_page.php?studio_id=".$row['StudioID'].">"."View resources and spaces</a></td>
+                <td><a href=org_resource_page.php?studio_id="
+                    .$row['StudioID'].
+                ">View resources and spaces</a></td>
               </tr>";
     }
     echo "</table>";
