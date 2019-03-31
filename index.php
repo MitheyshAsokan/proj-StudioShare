@@ -30,6 +30,35 @@ if($_SERVER['REQUEST_METHOD']=='POST'){
 }
  ?>
 
+
+<html>
+
+<head>
+  <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css?family=Ubuntu" rel="stylesheet">
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
+  <title>StudioShare</title>
+</head>
+
+<body>
+  <div class="main">
+    <p class="sign" align="center">Sign In</p>
+    <form class="form1" method="post">
+      <input class="un " type="text" align="center" placeholder="Username" name="username">
+      <input class="pass" type="password" align="center" placeholder="Password" name="password">
+      <a class="submit" align="center">Sign In</a>
+      <p class="forgot" align="center"><a href="creator-login.php">Creator Sign In</p>
+      <p class="forgot" align="center"><a href="staff-login.php">Staff Sign In</p>
+            
+                
+    </div>
+     
+</body>
+
+</html>
+
+<!--
 <html>
 <head>
     <title>StudioShare</title>
