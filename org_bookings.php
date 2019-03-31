@@ -9,11 +9,14 @@
     $row=mysqli_fetch_array($result,MYSQLI_ASSOC);
     $orgId = $row['OrgID'];
 
+    //Date Settings
     $todaysDate = date('Y-m-d');
 
 
     $query2="SELECT * FROM BookingSpace WHERE OrgID = '$orgId' AND BookingDate >= '$todaysDate' ORDER BY BookingDate";
     $result2=mysqli_query($con,$query2);
+    $query3="SELECT BookingDate, StudioName, SpaceName, CreatorName, BookingDescription, ConfigurationRequest FROM BookingSpace JOIN Studio JOIN Space JOIN Creator Where BookingSpace.StudioID = Studio.StudioID AND BookingSpace.SpaceID = Space.SpaceID AND BookingSpace.CreatorID = Creator.CreatorID Order By BookingDate";
+    $result3=mysqli_query($con,$query3);
 ?>
 
 
@@ -37,33 +40,15 @@
         </tr>
         <?php
         //We can change this as we go.
-        while($row2 = mysqli_fetch_array($result2,MYSQLI_ASSOC)){
+        while($row3 = mysqli_fetch_array($result3,MYSQLI_ASSOC)){
 
-            $studioId = row2['StudioID'];
-            $studioNameQuery = "SELECT StudioName FROM Studio WHERE StudioID = '$studioId'";
-            $result3 = mysqli_query($con,$studioNameQuery);
-            $row3 = mysqli_fetch_array($result3,MYSQLI_ASSOC);
-            $studioName = $row3['StudioName'];
-
-            $spaceId = row2['SpaceID'];
-            $spaceNameQuery = "SELECT SpaceName FROM Space WHERE SpaceID = '$spaceID'";
-            $result5 = mysqli_query($con,$spaceNameQuery);
-            $row5 = mysqli_fetch_array($result5,MYSQLI_ASSOC);
-            $spaceName = $row5['SpaceName'];
-
-            $creatorId = row2['CreatorID'];
-            $creatorNameQuery = "SELECT CreatorName FROM Creator WHERE CreatorID = '$creatorId";
-            $result4 = mysqli_query($con,$creatorNameQuery);
-            $row4 = mysqli_fetch_array($result4,MYSQLI_ASSOC);
-            $creatorName = $row4['CreatorName'];
-            
             echo "<tr>";
-            echo "<td>" . $row2['BookingDate'] . "</td>";
-            echo "<td>" . $studioName . "</td>";
-            echo "<td>" . $spaceName . "</td>";
-            echo "<td>" . $creatorName . "</td>";
-            echo "<td>" . $row2['BookingDescription'] . "</td>";
-            echo "<td>" . $row2['ConfigurationRequest'] . "</td>";
+            echo "<td>" . $row3['BookingDate'] . "</td>";
+            echo "<td>" . $row3['StudioName'] . "</td>";
+            echo "<td>" . $row3['SpaceName'] . "</td>";
+            echo "<td>" . $row3['CreatorName'] . "</td>";
+            echo "<td>" . $row3['BookingDescription'] . "</td>";
+            echo "<td>" . $row3['ConfigurationRequest'] . "</td>";
             echo "</tr>";
         }
         ?>

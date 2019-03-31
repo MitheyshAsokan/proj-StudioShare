@@ -39,13 +39,25 @@
         <?php
         //We can change this as we go.
         while($row2 = mysqli_fetch_array($result2,MYSQLI_ASSOC)){
-            echo "<tr>";
-            echo "<td>" . $row2['BookingDate'] . "</td>";
-            echo "<td>" . $row2['StudioID'] . "</td>";
-            echo "<td>" . $row2['SpaceID'] . "</td>";
-            echo "<td>" . $row2['BookingDescription'] . "</td>";
-            echo "<td>" . $row2['ConfigurationRequest'] . "</td>";
-            echo "</tr>";
+            echo "<tr><td>".$row2['BookingDate'] . "</td>
+            <td>" . $row2['StudioID'] . "</td>
+            <td>" . $row2['SpaceID'] . "</td>
+            <td>" . $row2['BookingDescription'] . "</td>
+            <td>" . $row2['ConfigurationRequest'] . "</td>
+            <td><form action='' method='post'>
+                <input type='hidden' name='id' value='$row[BookingID]'>
+                <input type='submit' name='delete_booking' value='Delete'></form></td></tr>";
+        }
+
+        if(isset($_POST['delete_booking'])) {
+            $to_delete = $_POST['id'];
+            $delete_item = "DELETE FROM BookingSpace WHERE BookingID='$to_delete'";
+            echo "<meta http-equiv='refresh' content='1'>";
+            if (mysqli_query($con, $delete_item)) {
+                echo "Booking successfully deleted.";
+            } else {
+                echo "Error deleting booking.";
+            }
         }
         ?>
 </table>
