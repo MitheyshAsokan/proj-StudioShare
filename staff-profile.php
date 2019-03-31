@@ -10,6 +10,7 @@
 
         $staffname = $row['StaffName'];
         $studioId = $row['StudioID'];
+        $orgname = $row['OrganizationName'];
 
     //Second querry to grab all the bookings associated with the staff's studio.  
     
@@ -29,6 +30,7 @@
 </head>
 <body>
     <h2>Welcome, <?php echo $staffname; ?></h2>
+    <h2>Your organization, <?php echo $orgname; ?></h2>
 
     <p>Scheduled Bookings</p>
     

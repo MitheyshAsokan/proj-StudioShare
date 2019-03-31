@@ -7,7 +7,8 @@
  $result=mysqli_query($con,$query);
  $row=mysqli_fetch_array($result,MYSQLI_ASSOC);
 
- $creatorname = $row['CreatorName']
+ $creatorname = $row['CreatorName'];
+ $orgname = $row['OrganizationName'];
 
 ?>
 
@@ -15,9 +16,11 @@
 <head>
     <title><?php echo $creatorusername; ?>'s Profile</title>
 </head>
+
 <body style="margin: 5px;">
 <h1>StudioShare: Creator Space</h1>
 <h2>Welcome, <?php echo $creatorname;?></h2>
+<h2>Your Organization: <?php echo $orgname;?></h2>
 <div class="navbar">
     <a href="creator-bookings.php" class="navbar-link">
         <div class="navbar-link-text">Bookings</div>
