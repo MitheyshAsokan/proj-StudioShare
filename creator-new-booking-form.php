@@ -13,33 +13,31 @@
  $_SESSION['SpaceSelection'] = $_POST['Space'];
  $spaceSelection = $_SESSION['SpaceSelection'];
 ?>
-
-
 <html>
+
 <head>
-    <title><?php echo $creatorusername; ?>'s Profile</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css?family=Ubuntu" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
+    <title>StudioShare</title>
 </head>
-<body style="margin: 5px;">
-<h1>StudioShare: Creator Space</h1>
-<h2>Create your new booking</h2>
 
-<h3>Enter Booking Details</h2>
-
-<form action="creator-new-booking-result.php" method="post">
-    Booking Description: <input name="bookingDescription" type="text"><br><br>
-    Configuration Request <input name="configReq" type="text"<br><br>
-    Date <input name="date" type="date"><br><br>
-    </select><br><br>
-    <input type="submit" value="Finalize Booking"><br><br>
-    <button type="reset" value="Reset">Clear all fields</button>
-</form>
-
-<a href="logout.php" class="navbar-link">
-        <div class="navbar-link-text">Sign Out</div>
-</a>
+<body>
+<div class="main">
+    <p class="sign" align="center">Create Your New Booking</p>
+    <form class="form1" action="creator-new-booking-result.php" method="post">
+        <input class="un" type="text" align="center" placeholder="Booking Description" name="bookingDescription">
+        <input class="un" type="text" align="center" placeholder="Studio Space Setup Request" name="configReq">
+        <input class="un" type="date" align="center" placeholder="Date" name="date">
+        <input class="submit" type="submit" name="submit" value="Finalize Booking">
+        <p class="forgot" align="center"><a href="logout.php">Logout</p>
+</div>
 
 </body>
+
 </html>
+
 
 
 
