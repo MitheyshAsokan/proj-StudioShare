@@ -2,6 +2,7 @@
 require 'org_session.php';
 require 'connect.php';
 $current_user=$_SESSION['login_user'];
+
 ?>
 <html>
     <head>
