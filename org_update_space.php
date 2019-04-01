@@ -21,6 +21,7 @@ require 'connect.php';
 require 'org_session.php';
 
 $space_id = mysqli_real_escape_string($con, $_GET['space_id']);
+$studio_id = mysqli_real_escape_string($con, $_GET['studio_id']);
 
 echo "<br>";
 echo "<a href=org_resource_page.php?studio_id="

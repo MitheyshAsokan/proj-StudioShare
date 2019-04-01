@@ -18,6 +18,7 @@
 require 'connect.php';
 require 'org_session.php';
 $resource_id = mysqli_real_escape_string($con, $_GET['resource_id']);
+$studio_id = mysqli_real_escape_string($con, $_GET['studio_id']);
 
 echo "<a href=org_resource_page.php?studio_id="
     .$studio_id.">".
