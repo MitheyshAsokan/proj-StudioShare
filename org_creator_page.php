@@ -1,3 +1,8 @@
+<html>
+    <head>
+        <link rel="stylesheet" href="style.css">
+    </head>
+
 <?php
 require'connect.php';
 require 'org_session.php';
@@ -48,7 +53,7 @@ if(isset($_POST['delete_creator'])) {
 }
 
 ?>
-<html>
+
     <body>
         <a href='org_add_creator.php'>Add New Creator</a><br><br>
         <a href="org_home.php">Return to Organization Home Page</a>
