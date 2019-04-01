@@ -1,3 +1,8 @@
+<html>
+    <head>
+    <link rel="stylesheet" href="style2.css">
+</head>
+
 <?php
 
 require 'connect.php';
@@ -101,7 +106,6 @@ echo "<a href=org_add_studio_space.php?studio_id="
         "Add resources to studio</a>";    
 
 ?>
-<html>
     <body>
         <br><br>
         <a href="org_studio_page.php">Return to Studio Page</a>

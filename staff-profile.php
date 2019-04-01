@@ -55,6 +55,9 @@
         ?>
     </table>
 
+    <br>
+    <a href="logout.php">Sign Out</a>
+
 
 </body>
 </html>
