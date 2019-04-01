@@ -1,23 +1,39 @@
-<html>
-<body>
-<h1>Add new space to studio</h1>
-<form action="" method="post">
-    Space Name: <input name="space_name" type="text"><br><br>
-    Space Type: <input name="space_type" type="text"<br><br>
-    Description: <input name="space_desc" type="text"<br><br>
-    </select><br><br>
-    <input type="submit" value="Add Space"><br><br>
-    <button type="reset" value="Reset">Clear all fields</button>
-</form><br><br>
-</body>
-</html>
-
 <?php
 
 require 'connect.php';
 require 'org_session.php';
 
+$space_id = mysqli_real_escape_string($con, $_GET['space_id']);
 $studio_id = mysqli_real_escape_string($con, $_GET['studio_id']);
+?>
+
+    <html>
+
+    <head>
+        <link rel="stylesheet" href="style.css">
+        <link href="https://fonts.googleapis.com/css?family=Ubuntu" rel="stylesheet">
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
+        <title>StudioShare</title>
+    </head>
+
+    <body>
+    <div class="main">
+        <p class="sign" align="center">Add Studio Space</p>
+        <form class="form1" method="post">
+            <input class="un" type="text" align="center" placeholder="Studio Space Name" name="space_name">
+            <input class="un" type="text" align="center" placeholder="Space Type" name="space_type">
+            <input class="un" type="text" align="center" placeholder="Description" name="space_desc">
+            <input class="submit" type="submit" name="submit" value="Add Studio">
+            <p class="forgot" align="center"><a href="org_resource_page.php?studio_id=<?php echo $studio_id ?>">Return to Resource Page</p>
+    </div>
+
+    </body>
+
+    </html>
+
+
+<?php
 $org_id=$_SESSION['org_id_session'];
 $org_name=$_SESSION['org_name_session'];
 
@@ -34,7 +50,6 @@ $space_desc=mysqli_real_escape_string($con,$_POST['space_desc']);
 if(empty($space_name)||empty($space_type) ||empty($space_desc)
     ||trim($space_name)==''||trim($space_type)==''
     ||trim($space_desc)==''){
-    echo 'You did not fill out the required fields.';
     die();
 }
 $query = "INSERT INTO Space(
@@ -51,7 +66,7 @@ $query = "INSERT INTO Space(
           '$space_type')";
 
 if (mysqli_query($con, $query)) {
-    echo "$space_name added successfully.";
+    header("location: org_resource_page.php?studio_id=$studio_id");
 }
 else {
     echo mysqli_error($con);

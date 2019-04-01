@@ -19,7 +19,7 @@ $studio_id = mysqli_real_escape_string($con, $_GET['studio_id']);
 
 <body>
 <div class="main">
-    <p class="sign" align="center">Update Studio</p>
+    <p class="sign" align="center">Update Studio Space</p>
     <form class="form1" method="post">
         <input class="un" type="text" align="center" placeholder="Studio Space Name" name="space_name">
         <input class="un" type="text" align="center" placeholder="Space Type" name="space_type">
