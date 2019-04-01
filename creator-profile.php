@@ -50,7 +50,7 @@
             <p class="sign" align="center">StudioShare: Creator Space</p>
             <p class="sign" align="center">Welcome, <?php echo $creatorname;?></p>
             <p class="sign" align="center">Your Organization: <?php echo $orgname;?></p>
-            <p class="forgot" align="center" ><a href="creator-bookings.php">Bookings</p>
+            <p class="forgot" align="center" ><a href="creator-bookings.php">Your Bookings</p>
             <p class="forgot" align="center"><a href="creator-new-booking.php">New Bookings</p>
             <p class="forgot" align="center" ><a href="logout.php">Sign Out</p> 
                     
