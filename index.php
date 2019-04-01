@@ -42,7 +42,7 @@ if($_SERVER['REQUEST_METHOD']=='POST'){
 
 <body>
   <div class="main">
-    <p class="sign" align="center">Sign In</p>
+    <p class="sign" align="center">Organization Sign In</p>
     <form class="form1" method="post">
       <input class="un " type="text" align="center" placeholder="Username" name="username">
       <input class="pass" type="password" align="center" placeholder="Password" name="password">
