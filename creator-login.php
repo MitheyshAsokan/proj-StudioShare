@@ -27,7 +27,8 @@ if($_SERVER['REQUEST_METHOD']=='POST'){
 }
  ?>
 
-<html>
+
+<!-- <html>
     <head>
         <title>Creator Page</title>
     </head>
@@ -52,4 +53,32 @@ if($_SERVER['REQUEST_METHOD']=='POST'){
     </a>
 
     </body>
+</html> -->
+
+
+<html>
+
+<head>
+  <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css?family=Ubuntu" rel="stylesheet">
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
+  <title>Creator Page</title>
+</head>
+
+<body>
+  <div class="main">
+    <p class="sign" align="center">Creator Sign In</p>
+    <form class="form1" method="post">
+      <input class="un " type="text" align="center" placeholder="Username" name="creator-username">
+      <input class="pass" type="password" align="center" placeholder="Password" name="creator-password">
+      <input class="submit" type="submit" name="submit" value="Sign In">
+
+      <p class="forgot" align="center"><a href="creator-first-login.php">Sign Up</p>
+      <p class="forgot" align="center"><a href="index.php">Return To Homepage</p>
+            
+    </div>
+     
+</body>
+
 </html>
