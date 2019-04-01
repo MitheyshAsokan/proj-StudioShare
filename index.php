@@ -31,34 +31,6 @@ if($_SERVER['REQUEST_METHOD']=='POST'){
  ?>
 
 <html>
-    <head>
-        <title>StudioShare</title>
-        <link rel="stylesheet" type="text/css" href="style.css">
-        <br><h1>StudioShare</h1>
-    </head>
-    <body>
-        <div class="login-page" method="post"> 
-            <div class="form">
-                <form class="login-form">
-                <input class="form" name="username" type="text" placeholder="username"/>
-                <input name="password"type="password" placeholder="password"/>
-                <button>login</button>
-                <p class="message">Creator Sign In <a href="creator-login.php">Creator Sign In</a></p>
-                </form>
-            </div>
-        </div>
-    </body>
-
-</html>
-
-<script>
-    $('.message a').click(function(){
-        $('form').animate({height: "toggle", opacity: "toggle"}, "slow");
-    });
-</script>
-
-<!--
-<html>
 <head>
     <title>StudioShare</title>
     <link rel="stylesheet" type="text/css" href="style.css">
