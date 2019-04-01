@@ -23,7 +23,7 @@ if($_SERVER['REQUEST_METHOD']=='POST'){
         header("location: staff-profile.php");
     }
     else{
-        echo 'Username or password is invalid';
+        echo '<p class=\"error\" > Username or password is invalid</p>';
     }
 }
  ?>

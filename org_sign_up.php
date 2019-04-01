@@ -53,7 +53,7 @@ $password=mysqli_real_escape_string($con,$_POST['password']);
 $confirmpassword=mysqli_real_escape_string($con,$_POST['confirm-password']);
 //checks to make sure all forms are filled out
 if(empty($username)||empty($password)||empty($orgname)||trim($username)==''||trim($password)==''||trim($orgname)==''){
-    echo 'You did not fill out the required fields.';
+    echo "<p class=\"error\"> Missing fields</p>";
     die();
 }
 
@@ -66,7 +66,10 @@ if($password != $confirmpassword){
     $query = "INSERT INTO Organization (`OrgName`, `Username`, `Password`) VALUES('$orgname', '$username', '$password')";
     //If registration is successful, user can go to login
     if (mysqli_query($con, $query)) {
+
+        $_SESSION['login_user']=$username;
         echo "<p class=\"error\" > Organization Added Successfully</p>";
+        header("location: index.php");
     }
     else {
         echo "<p class=\"error\" > Username Is Not Available</p>";

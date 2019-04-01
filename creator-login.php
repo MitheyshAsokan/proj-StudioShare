@@ -22,7 +22,7 @@ if($_SERVER['REQUEST_METHOD']=='POST'){
         header("location: creator-profile.php");
     }
     else{
-        echo 'Username or password is invalid';
+        echo "<p class=\"error\" > Username or password is invalid</p>";
     }
 }
  ?>

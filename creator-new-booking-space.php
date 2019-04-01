@@ -7,9 +7,13 @@
  $_SESSION['StudioSelection'] = $_POST['Studio'];
 
  $studioSelection = $_SESSION['StudioSelection'];
+ $orgId = $_SESSION['OrgID'];
 
  $query="SELECT * FROM Space WHERE StudioID = '$studioSelection'";
  $result=mysqli_query($con,$query);
+
+ $query2="SELECT * FROM Resources WHERE StudioID = '$studioSelection' AND OrgId = '$orgId'";
+ $result2=mysqli_query($con,$query2);
 
 ?>
 
@@ -44,9 +48,33 @@
         ?>
 </table>
 
+<br><br>
 <input type="submit" name="submit" value="Done">
 </form>
 
+<br><br>
+<h3>Studio Resources:</h2>
+<table>
+        <tr>
+            <th>Name</th>
+            <th>Description</th>
+            <th>Type</th>
+            <th>Units Available</th>
+        </tr>
+        <?php
+        //We can change this as we go.
+        while($row = mysqli_fetch_array($result2,MYSQLI_ASSOC)){
+            echo "<tr>";
+            echo "<td>" . $row['ResourceName'] . "</td>";
+            echo "<td>" . $row['ResourceDescription'] . "</td>";
+            echo "<td>" . $row['ResourceType'] . "</td>";
+            echo "<td>" . $row['UnitsAvailable'] . "</td>";
+            echo "</tr>";
+        }
+        ?>
+</table>
+
+<br><br>
 <a href="logout.php" class="navbar-link">
         <div class="navbar-link-text">Sign Out</div>
 </a>
