@@ -5,31 +5,42 @@ require 'org_session.php';
 $org_id=$_SESSION['org_id_session'];
 ?>
 <html>
+
+<head>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css?family=Ubuntu" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
+    <title>StudioShare</title>
+</head>
+
 <body>
-<h1>Update Staff Profile</h1>
-<form action="" method="post">
-    Staff Name: <input name="staff_name" type="text"><br><br>
-    Username:   <input name="username" type="text"><br><br>
-    Position:   <input name="position" type="text"><br><br>
-    Start Date: <input name="start_date" type="date"><br><br>
-    Studio:     <select name="studio">
-                    <option value="">Select a studio</option>
-                    <?php
-                    $studio_list = "SELECT * FROM Studio WHERE OrgID ='$org_id'";
-                    $studio_result = mysqli_query($con, $studio_list);
-                    while($row = mysqli_fetch_assoc($studio_result)) {
-                        $studio_name = $row['StudioName'];
-                    ?>
-                    <option value="<?php echo $studio_name?>"><?php echo $studio_name?></option>
-                    <?php
-                    }
-                    ?>
-                </select><br><br>
-    <input type="submit" value="Update Staff"><br><br>
-    <button type="reset" value="Reset">Clear all fields</button>
-</form><br><br>
-<a href="org_staff_page.php">Return to Staff Page</a>
+<div class="main">
+    <p class="sign" align="center">Update Staff Profile</p>
+    <form class="form1" method="post">
+        <input class="un" type="text" align="center" placeholder="Staff Name" name="staff_name">
+        <input class="un" type="text" align="center" placeholder="Username" name="username">
+        <input class="un" type="text" align="center" placeholder="Position" name="position">
+        <input class="un" type="date" align="center" placeholder="Start Date" name="start_date">
+        <select class="un" name="studio">
+            <option value="">Select a studio</option>
+            <?php
+            $studio_list = "SELECT * FROM Studio WHERE OrgID ='$org_id'";
+            $studio_result = mysqli_query($con, $studio_list);
+            while($row = mysqli_fetch_assoc($studio_result)) {
+                $studio_name = $row['StudioName'];
+                ?>
+                <option value="<?php echo $studio_name?>"><?php echo $studio_name?></option>
+                <?php
+            }
+            ?>
+        </select>
+        <input class="submit" type="submit" name="submit" value="Update Staff">
+        <p class="forgot" align="center"><a href="org_staff_page.php">Return to Staff Page</p>
+</div>
+
 </body>
+
 </html>
 
 <?php
@@ -62,11 +73,10 @@ $query = "UPDATE Staff SET
           WHERE StaffID = '$staff_id'";
 
 if (mysqli_query($con, $query)) {
-    echo "$username updated successfully.";
+    header("location: org_staff_page.php");
 }
 else {
     echo mysqli_error($con);
-    echo 'That username is already taken.';
 }
 
 mysqli_close($con);
