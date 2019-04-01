@@ -25,7 +25,7 @@ $studio_id = mysqli_real_escape_string($con, $_GET['studio_id']);
         <input class="un" type="text" align="center" placeholder="Resource Type" name="resource_type">
         <input class="un" type="text" align="center" placeholder="Description" name="resource_desc">
         <input class="un" type="number" align="center" placeholder="Units Available" name="units">
-        <input class="submit" type="submit" name="submit" value="Add Studio">
+        <input class="submit" type="submit" name="submit" value="Add Resource">
         <p class="forgot" align="center"><a href="org_resource_page.php?studio_id=<?php echo $studio_id ?>">Return to Resource Page</p>
 </div>
 
