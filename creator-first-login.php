@@ -42,7 +42,7 @@
       <input class="pass" type="password" align="center" placeholder="Confirm Password" name="confirm-password">
       <input class="submit" type="submit" name="submit" value="Sign Up">
 
-      <p class="forgot" align="center"><a href="creator-login.php">Return to Creator Login</p>
+      <p class="forgot" align="center"><a href="creator-login.php">Return to Creator Sign In</p>
       <p class="forgot" align="center"><a href="index.php">Return To Homepage</p>
             
     </div>
