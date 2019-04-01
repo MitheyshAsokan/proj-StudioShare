@@ -10,6 +10,7 @@
     Organization Name: <input name="orgname" type="text"><br><br>
     Username: <input name="username" type="text"<br><br>
     Password: <input name="password" type="password"><br><br>
+    Confirm Password: <input name="confirm-password" type="password"><br><br>
     </select><br><br>
     <input type="submit" value="Register Organization"><br><br>
     <button type="reset" value="Reset">Clear all fields</button>
@@ -25,20 +26,29 @@ require 'connect.php';
 $orgname=mysqli_real_escape_string($con, $_POST['orgname']);
 $username=mysqli_real_escape_string($con,$_POST['username']);
 $password=mysqli_real_escape_string($con,$_POST['password']);
+$confirmpassword=mysqli_real_escape_string($con,$_POST['confirm-password']);
 //checks to make sure all forms are filled out
 if(empty($username)||empty($password)||empty($orgname)||trim($username)==''||trim($password)==''||trim($orgname)==''){
     echo 'You did not fill out the required fields.';
     die();
 }
-//create a new user by inserting its details into the User table
-$query = "INSERT INTO Organization (`OrgName`, `Username`, `Password`) VALUES('$orgname', '$username', '$password')";
-//If registration is successful, user can go to login
-if (mysqli_query($con, $query)) {
-    echo "$username added successfully.";
+
+if($password != $confirmpassword){
+    echo "<br>";
+    echo "Your passwords do not match!";
+    echo "<br>";
+}else{
+    //create a new user by inserting its details into the User table
+    $query = "INSERT INTO Organization (`OrgName`, `Username`, `Password`) VALUES('$orgname', '$username', '$password')";
+    //If registration is successful, user can go to login
+    if (mysqli_query($con, $query)) {
+        echo "$username added successfully.";
+    }
+    else {
+        echo 'Username is not available.';
+    }
 }
-else {
-    echo 'Username is not available.';
-}
+
 
 mysqli_close($con);
 ?>
