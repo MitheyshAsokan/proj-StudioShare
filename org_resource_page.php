@@ -36,6 +36,18 @@ else{
     echo "There are currently no spaces assigned to this studio";
     echo "<br><br>";
 }
+
+if(isset($_POST['delete_space'])) {
+    $to_delete = $_POST['space_id'];
+    $delete_space = "DELETE FROM Space WHERE SpaceID='$to_delete'";
+    echo "<meta http-equiv='refresh' content='1'>";
+    if (mysqli_query($con, $delete_space)) {
+        echo "Space successfully deleted.";
+    } else {
+        echo "Error deleting Space.";
+    }
+}
+
 echo "<a href=org_add_studio_space.php?studio_id="
     .$studio_id.">".
     "Add space to studio</a>";
