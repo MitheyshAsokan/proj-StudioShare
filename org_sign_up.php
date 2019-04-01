@@ -35,6 +35,7 @@
         <input class="un " type="text" align="center" placeholder="Organization Name" name="orgname">
         <input class="un " type="text" align="center" placeholder="Username" name="username">
         <input class="pass" type="password" align="center" placeholder="Password" name="password">
+        <input class="pass" type="password" align="center" placeholder="Confirm Password" name="confirm-password">
         <input class="submit" type="submit" name="submit" value="Register">
 
         <button class="submit" type="reset" value="Reset">Clear </button>
