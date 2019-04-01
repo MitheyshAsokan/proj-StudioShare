@@ -12,7 +12,7 @@
 
 ?>
 
-<html>
+<!-- <html>
 <head>
     <title><?php echo $creatorusername; ?>'s Profile</title>
 </head>
@@ -34,4 +34,26 @@
 </div>
 </div>
 </body>
+</html> -->
+
+<html>
+    <head>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css?family=Ubuntu" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
+    <title><?php echo $creatorusername; ?>'s Profile</title>
+    </head>
+
+    <body>
+        <div class="main">
+            <p class="sign" align="center">StudioShare: Creator Space</p>
+            <p class="sign" align="center">Welcome, <?php echo $creatorname;?></p>
+            <p class="sign" align="center">Your Organization: <?php echo $orgname;?></p>
+            <p class="forgot" align="center" ><a href="creator-bookings.php">Bookings</p>
+            <p class="forgot" align="center"><a href="creator-new-booking.php">New Bookings</p>
+            <p class="forgot" align="center" ><a href="logout.php">Sign Out</p> 
+                    
+        </div> 
+    </body> 
 </html>
