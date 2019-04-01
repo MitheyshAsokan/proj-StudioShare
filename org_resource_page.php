@@ -17,15 +17,16 @@ if (mysqli_num_rows($space_result) > 0){
                      <th>Space Type</th>
                      </tr>";
     while ($row = mysqli_fetch_assoc($space_result)){
+        $space_id = $row['SpaceID'];
         echo "<tr>
-                <td>".$row['SpaceID']."</td>
+                <td>".$space_id."</td>
                 <td>".$row['SpaceName']."</td>
                 <td>".$row['SpaceDescription']."</td>
                 <td>".$row['SpaceType']."</td>
                 <td><form action='' method='post'>
                 <input type='hidden' name='space_id' value='$row[SpaceID]'>
                 <input type='submit' name='delete_space' value='Delete'>
-                <a href=org_update_space.php?resource_id=".$row['SpaceID'].">Edit</a>
+                <a href=org_update_space.php?space_id=$space_id&studio_id=$studio_id>Edit</a>
                 </form></td></tr>";
     }
     echo "</table>";
@@ -35,6 +36,18 @@ else{
     echo "There are currently no spaces assigned to this studio";
     echo "<br><br>";
 }
+
+if(isset($_POST['delete_space'])) {
+    $to_delete = $_POST['space_id'];
+    $delete_space = "DELETE FROM Space WHERE SpaceID='$to_delete'";
+    echo "<meta http-equiv='refresh' content='1'>";
+    if (mysqli_query($con, $delete_space)) {
+        echo "Space successfully deleted.";
+    } else {
+        echo "Error deleting Space.";
+    }
+}
+
 echo "<a href=org_add_studio_space.php?studio_id="
     .$studio_id.">".
     "Add space to studio</a>";
@@ -51,8 +64,9 @@ echo "<a href=org_add_studio_space.php?studio_id="
                          <th>Units Available</th>
                          </tr>";
         while ($row = mysqli_fetch_assoc($resources_result)){
+            $resource_id = $row['ResourceID'];
             echo "<tr>
-                    <td>".$row['ResourceID']."</td>
+                    <td>".$resource_id."</td>
                     <td>".$row['ResourceName']."</td>
                     <td>".$row['ResourceType']."</td>
                     <td>".$row['ResourceDescription']."</td>
@@ -60,9 +74,7 @@ echo "<a href=org_add_studio_space.php?studio_id="
                     <td><form action='' method='post'>
                     <input type='hidden' name='resource_id' value='$row[ResourceID]'>
                     <input type='submit' name='delete_resource' value='Delete'>
-                    <a href=org_update_resource.php?resource_id=
-                        ".$row['ResourceID']."
-                    >Edit</a>
+                    <a href=org_update_resource.php?resource_id=$resource_id&studio_id=$studio_id>Edit</a>
                     </form></td></tr>";
         }
         echo "</table>";

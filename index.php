@@ -31,25 +31,30 @@ if($_SERVER['REQUEST_METHOD']=='POST'){
  ?>
 
 <html>
-<head>
-    <title>StudioShare</title>
-    <link rel="stylesheet" type="text/css" href="style.css">
-    <br><h1>StudioShare</h1>
-</head>
-<body>
-<div class="login">
-    <h1>LOGIN</h1>
-    <form action="" method="post">
-        <p>USERNAME</p>
-        <input name="username" type="text" placeholder="ENTER USERNAME">
-        <p>PASSWORD</p>
-        <input name="password" type="password" placeholder="ENTER PASSWORD">
-        <input type="submit" name="submit" value="Login">
-        <a href="org_sign_up.php">Join StudioShare</a><br>
 
-        <a href="creator-login.php">Log in as creator</a><br>
-        <a href="staff-login.php">Log in as staff</a>
-    </form>
-</div>
+<head>
+  <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css?family=Ubuntu" rel="stylesheet">
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
+  <title>StudioShare</title>
+</head>
+
+<body>
+  <div class="main">
+    <p class="sign" align="center">Sign In</p>
+    <form class="form1" method="post">
+      <input class="un " type="text" align="center" placeholder="Username" name="username">
+      <input class="pass" type="password" align="center" placeholder="Password" name="password">
+      <input class="submit" type="submit" name="submit" value="Sign In">
+
+      <p class="forgot" align="center"><a href="org_sign_up.php">Join StudioShare</p>
+      <p class="forgot" align="center"><a href="creator-login.php">Creator Sign In</p>
+      <p class="forgot" align="center"><a href="staff-login.php">Staff Sign In</p>
+            
+    </div>
+     
 </body>
+
 </html>
+

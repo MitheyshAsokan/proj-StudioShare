@@ -19,6 +19,8 @@
 <p>If you already have an StudioShare account, click on
 <a href='index.php'>Sign In</a><br>
 
+
+
 <?php
 
 require 'connect.php';
