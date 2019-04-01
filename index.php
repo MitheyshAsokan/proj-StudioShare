@@ -38,7 +38,7 @@ if($_SERVER['REQUEST_METHOD']=='POST'){
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
   <title>StudioShare</title>
-  <h1 align="center" class="name">StudioShare </h1>
+  <h1 align="center" class="name">StudioShare</h1>
 </head>
 
 <body>

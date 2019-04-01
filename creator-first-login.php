@@ -35,7 +35,7 @@
 
 <body>
   <div class="main">
-    <p class="sign" align="center">First Time Login</p>
+    <p class="sign" align="center">Creator SignUp</p>
     <form class="form1" method="post">
       <input class="un " type="text" align="center" placeholder="Provided Username" name="creator-username">
       <input class="pass" type="password" align="center" placeholder="Password" name="creator-password">

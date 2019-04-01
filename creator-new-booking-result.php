@@ -11,7 +11,6 @@
         <div class="navbar-link-text">Return to profile</div>
     </a>
 
-
     <a href="logout.php" class="navbar-link">
         <div class="navbar-link-text">Sign Out</div>
     </a>

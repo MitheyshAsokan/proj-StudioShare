@@ -40,7 +40,7 @@
             <th>Date</th>
             <th>Description</th>
             <th>Configurations</th>
-            <th>Creator</th>
+            <th>Creator Contact</th>
         </tr>
         <?php
         //We can change this as we go.
@@ -49,7 +49,15 @@
             echo "<td>" . $row2['BookingDate'] . "</td>";
             echo "<td>" . $row2['BookingDescription'] . "</td>";
             echo "<td>" . $row2['ConfigurationRequest'] . "</td>";
-            echo "<td>" . $row2['CreatorID'] . "</td>";
+
+            $creatorId = $row2['CreatorID'];
+
+            $query="SELECT * FROM Creator WHERE CreatorID = '$creatorId'";
+            $result=mysqli_query($con,$query);
+            $row3=mysqli_fetch_array($result,MYSQLI_ASSOC);
+
+        
+            echo "<td>" . $row3['Username'] . "</td>";
             echo "</tr>";
         }
         ?>

@@ -25,6 +25,7 @@
 
 <html>
 <head>
+    <link rel="stylesheet" href="style2.css">
     <title><?php echo $creatorusername; ?>'s Profile</title>
 </head>
 <body style="margin: 5px;">
@@ -53,9 +54,14 @@
         }
         ?>
 </table>
-
-<input type="submit" name="submit" value="Done">
+<br><br>
+<input type="submit" name="submit" value="Confirm Selection">
 </form>
+
+<br>
+<a href="creator-profile.php" class="navbar-link">
+        <div class="navbar-link-text">Return to creator profile</div>
+</a>
 
 <a href="logout.php" class="navbar-link">
         <div class="navbar-link-text">Sign Out</div>

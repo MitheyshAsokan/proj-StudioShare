@@ -63,6 +63,7 @@
         ?>
 </table>
 
+<br>
 <a href="creator-profile.php" class="navbar-link">
         <div class="navbar-link-text">Return to creator profile</div>
 </a>
