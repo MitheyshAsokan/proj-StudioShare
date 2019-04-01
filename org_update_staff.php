@@ -61,7 +61,6 @@ if(empty($staff_name)||empty($username)||empty($position)
     ||empty($start_date)||empty($studio)
     ||trim($staff_name)==''||trim($username)==''
     ||trim($position)==''||trim($start_date)==''||trim($studio)==''){
-    echo 'You did not fill out the required fields.';
     die();
 }
 $query = "UPDATE Staff SET 
