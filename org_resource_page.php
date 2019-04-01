@@ -25,7 +25,7 @@ if (mysqli_num_rows($space_result) > 0){
                 <td><form action='' method='post'>
                 <input type='hidden' name='space_id' value='$row[SpaceID]'>
                 <input type='submit' name='delete_space' value='Delete'>
-                <a href=org_update_space.php?resource_id=".$row['SpaceID'].">Edit</a>
+                <a href=org_update_space.php?space_id=".$row['SpaceID'].">Edit</a>
                 </form></td></tr>";
     }
     echo "</table>";
