@@ -19,15 +19,41 @@ if($_SERVER['REQUEST_METHOD']=='POST'){
     //If the User is in the database then a new session is created
     if($count===1){
         $_SESSION['staff-login_user']=$staffusername;
-        echo 'Login successful!';
+        echo "<p class=\"error\" > Sign In Successful</p>";
         header("location: staff-profile.php");
     }
     else{
-        echo 'Username or password is invalid';
+        echo "<p class=\"error\" > Invalid Password or Username</p>";
     }
 }
  ?>
 
+<html>
+    <head>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css?family=Ubuntu" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
+    <title>Staff Sign In</title>
+    </head>
+
+    <body>
+    <div class="main">
+        <p class="sign" align="center">Staff Sign In</p>
+        <form class="form1" method="post">
+        <input class="un " type="text" align="center" placeholder="Username" name="staff-username">
+        <input class="pass" type="password" align="center" placeholder="Password" name="staff-password">
+        <input class="submit" type="submit" name="submit" value="Sign In">
+
+        <p class="forgot" align="center"><a href="staff-first-login.php">Sign Up</p>
+        <p class="forgot" align="center"><a href="index.php">Return To Homepage</p>
+                
+        </div>
+        
+    </body>
+</html>
+
+<!-- </html>
 
 <html>
     <head>
@@ -50,4 +76,4 @@ if($_SERVER['REQUEST_METHOD']=='POST'){
         <div class="navbar-link-text">Return to Homepage</div>
     </a>
     </body>
-</html>
+</html> -->
