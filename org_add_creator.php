@@ -1,18 +1,28 @@
 <html>
-    <body>
-        <h1>Create New Creator Profile</h1>
-        <form action="" method="post">
-            Creator Name: <input name="creator_name" type="text"><br><br>
-            Username: <input name="username" type="text"><br><br>
-            Content Type: <input name="content_type" type="text"><br><br>
-            Start Date: <input name="start_date" type="date"><br><br>
-            Contract Duration (Years): <input name="duration" type="number"><br><br>
-            </select><br><br>
-            <input type="submit" value="Register Creator"><br><br>
-            <button type="reset" value="Reset">Clear all fields</button>
-        </form><br><br>
-    <a href="org_creator_page.php">Return to Creator Page</a>
-    </body>
+
+<head>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css?family=Ubuntu" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
+    <title>StudioShare</title>
+</head>
+
+<body>
+<div class="main">
+    <p class="sign" align="center">Create New Creator Profile</p>
+    <form class="form1" method="post">
+        <input class="un" type="text" align="center" placeholder="Creator Name" name="creator_name">
+        <input class="un" type="text" align="center" placeholder="Username" name="username">
+        <input class="un" type="text" align="center" placeholder="Content Type" name="content_type">
+        <input class="un" type="date" align="center" placeholder="Start Date" name="start_date">
+        <input class="un" type="number" align="center" placeholder="Contract Duration (Years)" name="duration">
+        <input class="submit" type="submit" name="submit" value="Register Creator">
+        <p class="forgot" align="center"><a href="org_creator_page.php">Return to Creator Page</p>
+</div>
+
+</body>
+
 </html>
 
 <?php
@@ -33,7 +43,6 @@ if(empty($creator_name)||empty($username)||empty($content_type)
     ||empty($start_date)||empty($duration)
     ||trim($creator_name)==''||trim($username)==''
     ||trim($content_type)==''||trim($start_date)==''||trim($duration)==''){
-        echo 'You did not fill out the required fields.';
     die();
 }
 $query = "INSERT INTO Creator (OrgID, OrganizationName, CreatorName, Username,
@@ -42,11 +51,10 @@ $query = "INSERT INTO Creator (OrgID, OrganizationName, CreatorName, Username,
            '$content_type', '$start_date','$duration')";
 
 if (mysqli_query($con, $query)) {
-    echo "$username added successfully.";
+    header("location: org_creator_page.php");
 }
 else {
     echo mysqli_error($con);
-    echo 'That username is already taken.';
 }
 
 mysqli_close($con);

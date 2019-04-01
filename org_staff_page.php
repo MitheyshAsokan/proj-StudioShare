@@ -1,3 +1,8 @@
+<html>
+    <head>
+        <link rel="stylesheet" href="style2.css">
+    </head>
+
 <?php
 require'connect.php';
 require 'org_session.php';
@@ -40,7 +45,7 @@ if(isset($_POST['delete_staff'])) {
 }
 
 ?>
-<html>
+
     <body>
         <a href='org_add_staff.php'>Add New Staff</a><br><br>
         <a href="org_home.php">Return to Organization Home Page</a>

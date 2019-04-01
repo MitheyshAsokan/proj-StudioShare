@@ -1,3 +1,9 @@
+<html>
+    <head>
+        <link rel="stylesheet" href="style2.css">
+    </head>
+
+
 <?php
 require'connect.php';
 require 'org_session.php';
@@ -14,7 +20,7 @@ if (mysqli_num_rows($studio_result) > 0){
                      <th>Studio Description</th>
                      </tr>";
     while ($row = mysqli_fetch_assoc($studio_result)){
-        echo "<td>
+        echo "
                 <td>".$row['StudioID']."</td>
                 <td>".$row['StudioName']."</td>
                 <td>".$row['StudioAddress']."</td>
@@ -48,7 +54,7 @@ if(isset($_POST['delete_studio'])) {
 }
 
 ?>
-<html>
+
     <body>
     <br><br>
         <a href='org_add_studio.php'>Add New Studio</a><br><br>

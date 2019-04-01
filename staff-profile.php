@@ -24,7 +24,9 @@
 
 
 <html>
+    
 <head>
+    <link rel="stylesheet" href="style2.css">
     <title>StudioShare</title>
     <h1>StudioShare: Staff Space</h1>
 </head>
@@ -33,7 +35,6 @@
     <h2>Your organization, <?php echo $orgname; ?></h2>
 
     <p>Scheduled Bookings</p>
-    
     <table>
         <tr>
             <th>Date</th>
@@ -53,6 +54,10 @@
         }
         ?>
     </table>
+
+    <br>
+    <a href="logout.php">Sign Out</a>
+
 
 </body>
 </html>

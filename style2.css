@@ -1,0 +1,21 @@
+    table {
+        border: solid 1px #E1BEE7;
+        border-collapse: collapse;
+        border-spacing: 0;
+        font: normal 13px Arial, sans-serif;
+        background-color: #FFFFFF;
+    }
+    th {
+        background-color: #E1BEE7;
+        border: solid 1px #E1BEE7;
+        color: #9C27B0;
+        padding: 10px;
+        text-align: left;
+        text-shadow: 1px 1px 1px #fff;
+    }
+    td {
+        border: solid 1px #E1BEE7;
+        color: #333;
+        padding: 10px;
+        text-shadow: 1px 1px 1px #fff;
+    }

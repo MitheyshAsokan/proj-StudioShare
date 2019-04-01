@@ -1,16 +1,26 @@
 <html>
+
+<head>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css?family=Ubuntu" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
+    <title>StudioShare</title>
+</head>
+
 <body>
-<h1>Update Studio</h1>
-<form action="" method="post">
-    Studio Name: <input name="studio_name" type="text"><br><br>
-    Studio Address: <input name="studio_address" type="text"<br><br>
-    Studio Description: <input name="studio_desc" type="text"<br><br>
-    </select><br><br>
-    <input type="submit" value="Update Studio"><br><br>
-    <button type="reset" value="Reset">Clear all fields</button>
-</form><br><br>
-<a href="org_studio_page.php">Return to Studio Page</a>
+<div class="main">
+    <p class="sign" align="center">Update Studio</p>
+    <form class="form1" method="post">
+        <input class="un" type="text" align="center" placeholder="Studio Name" name="studio_name">
+        <input class="un" type="text" align="center" placeholder="Studio Address" name="studio_address">
+        <input class="un" type="text" align="center" placeholder="Description" name="studio_desc">
+        <input class="submit" type="submit" name="submit" value="Update Studio">
+        <p class="forgot" align="center"><a href="org_studio_page.php">Return to Studio Page</p>
+</div>
+
 </body>
+
 </html>
 
 <?php
@@ -23,7 +33,6 @@ $studio_desc=mysqli_real_escape_string($con,$_POST['studio_desc']);
 
 if(empty($studio_name)||empty($studio_address)||empty($studio_desc)
     ||trim($studio_name)==''||trim($studio_address)=='' ||trim($studio_desc)==''){
-    echo 'You did not fill out the required fields.';
     die();
 }
 $query = "UPDATE Studio SET
@@ -33,11 +42,10 @@ $query = "UPDATE Studio SET
           WHERE StudioID = '$studio_id'";
 
 if (mysqli_query($con, $query)) {
-    echo "$studio_name updated successfully.";
+    header("location: org_studio_page.php");
 }
 else {
     echo mysqli_error($con);
-    echo 'That Studio Name is already taken.';
 }
 
 mysqli_close($con);

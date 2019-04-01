@@ -21,6 +21,7 @@
 
 <html>
 <head>
+    <link rel="stylesheet" href="style2.css">
     <title><?php echo $creatorusername; ?>'s Profile</title>
 </head>
 <body style="margin: 5px;">
