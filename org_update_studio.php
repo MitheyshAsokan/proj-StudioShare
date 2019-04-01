@@ -33,7 +33,6 @@ $studio_desc=mysqli_real_escape_string($con,$_POST['studio_desc']);
 
 if(empty($studio_name)||empty($studio_address)||empty($studio_desc)
     ||trim($studio_name)==''||trim($studio_address)=='' ||trim($studio_desc)==''){
-    echo 'You did not fill out the required fields.';
     die();
 }
 $query = "UPDATE Studio SET
