@@ -56,10 +56,24 @@ if(empty($staff_name)||empty($username)||empty($position)
     die();
 }
 
-$query = "INSERT INTO Staff (OrgID, OrganizationName, StaffName, Username,
-          Password, Position, StartDate, StudioID) 
-          VALUES('$org_id', '$org_name', '$staff_name', '$username', '$password',
-           '$position', '$start_date', '$studio_id')";
+$query = "INSERT INTO Staff (
+          OrgID, 
+          OrganizationName, 
+          StaffName, 
+          Username,
+          Password, 
+          Position, 
+          StartDate, 
+          StudioID) 
+          VALUES(
+          '$org_id', 
+          '$org_name', 
+          '$staff_name', 
+          '$username', 
+          '$password',
+          '$position', 
+          '$start_date', 
+          '$studio_id')";
 
 if (mysqli_query($con, $query)) {
     echo "$username added successfully.";
