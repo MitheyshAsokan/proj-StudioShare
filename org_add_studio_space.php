@@ -24,9 +24,11 @@ $studio_id = mysqli_real_escape_string($con, $_GET['studio_id']);
 $org_id=$_SESSION['org_id_session'];
 $org_name=$_SESSION['org_name_session'];
 
+echo "<br>";
 echo "<a href=org_resource_page.php?studio_id="
     .$studio_id.">".
-    "Return to resource page</a>";
+    "Return to studio page</a>";
+echo "<br>";
 
 $space_name=mysqli_real_escape_string($con,$_POST['space_name']);
 $space_type=mysqli_real_escape_string($con,$_POST['space_type']);

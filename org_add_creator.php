@@ -28,7 +28,6 @@ $password="password";
 $content_type=mysqli_real_escape_string($con,$_POST['content_type']);
 $start_date=mysqli_real_escape_string($con,$_POST['start_date']);
 $duration=mysqli_real_escape_string($con,$_POST['duration']);
-$first_login="Yes";
 
 if(empty($creator_name)||empty($username)||empty($content_type)
     ||empty($start_date)||empty($duration)
@@ -38,9 +37,9 @@ if(empty($creator_name)||empty($username)||empty($content_type)
     die();
 }
 $query = "INSERT INTO Creator (OrgID, OrganizationName, CreatorName, Username,
-          Password, ContentType, ContractStartDate, ContractDuration, FirstTimeLogin) 
+          Password, ContentType, ContractStartDate, ContractDuration) 
           VALUES('$org_id', '$org_name', '$creator_name', '$username', '$password', 
-           '$content_type', '$start_date','$duration', '$first_login')";
+           '$content_type', '$start_date','$duration')";
 
 if (mysqli_query($con, $query)) {
     echo "$username added successfully.";

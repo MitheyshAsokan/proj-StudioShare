@@ -34,7 +34,7 @@ if($_SERVER['REQUEST_METHOD']=='POST'){
     <head>
         <title>StudioShare</title>
         <link rel="stylesheet" type="text/css" href="style.css">
-        <br><h1>StudioShare.</h1>
+        <br><h1>StudioShare</h1>
     </head>
     <body>
         <div class="login-page" method="post"> 

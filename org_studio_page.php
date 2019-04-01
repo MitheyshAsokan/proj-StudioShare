@@ -31,7 +31,9 @@ if (mysqli_num_rows($studio_result) > 0){
     echo "</table>";
 }
 else{
+    echo "<br><br>";
     echo "There are currently no studios under this organization.";
+    echo "<br><br>";
 }
 
 if(isset($_POST['delete_studio'])) {
@@ -48,6 +50,7 @@ if(isset($_POST['delete_studio'])) {
 ?>
 <html>
     <body>
+    <br><br>
         <a href='org_add_studio.php'>Add New Studio</a><br><br>
         <a href="org_home.php">Return to Organization Home Page</a>
     </body>
