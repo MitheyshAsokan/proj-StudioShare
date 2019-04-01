@@ -29,18 +29,17 @@
 
 <body>
   <div class="main">
-    <p class="sign" align="center">Register Organization</p>
-    <form class="form1" method="post">
+        <p class="sign" align="center">Register Organization</p>
+        <form class="form1" method="post">
 
-        <input class="un " type="text" align="center" placeholder="Organization Name" name="orgname">
-        <input class="un " type="text" align="center" placeholder="Username" name="username">
-        <input class="pass" type="password" align="center" placeholder="Password" name="password">
-        <input class="pass" type="password" align="center" placeholder="Confirm Password" name="confirm-password">
-        <input class="submit" type="submit" name="submit" value="Register">
+            <input class="un " type="text" align="center" placeholder="Organization Name" name="orgname">
+            <input class="un " type="text" align="center" placeholder="Username" name="username">
+            <input class="pass" type="password" align="center" placeholder="Password" name="password">
+            <input class="pass" type="password" align="center" placeholder="Confirm Password" name="confirm-password">
+            <input class="submit" type="submit" name="submit" value="Register">
 
-        <button class="submit" type="reset" value="Reset">Clear </button>
-        <p class="forgot" align="center"><a href="index.php">Return To Homepage</p>
-            
+            <p class="forgot" align="center"><a href="index.php">Return To Homepage</p>
+         
     </div>
      
 
@@ -59,18 +58,18 @@ if(empty($username)||empty($password)||empty($orgname)||trim($username)==''||tri
 }
 
 if($password != $confirmpassword){
-    echo "<br>";
-    echo "Your passwords do not match!";
-    echo "<br>";
+
+    echo "<p class=\"error\" > Passwords Do Not Match</p>";
+
 }else{
     //create a new user by inserting its details into the User table
     $query = "INSERT INTO Organization (`OrgName`, `Username`, `Password`) VALUES('$orgname', '$username', '$password')";
     //If registration is successful, user can go to login
     if (mysqli_query($con, $query)) {
-        echo "$username added successfully.";
+        echo "<p class=\"error\" > Organization Added Successfully</p>";
     }
     else {
-        echo 'Username is not available.';
+        echo "<p class=\"error\" > Username Is Not Available</p>";
     }
 }
 

@@ -21,11 +21,11 @@ if($_SERVER['REQUEST_METHOD']=='POST'){
     //If the User is in the database then a new session is created
     if($count===1){
         $_SESSION['login_user']=$loginusername;
-        echo 'Login successful!';
+        echo "<p class=\"error\" >Sign In Successful</p>";
         header("location: org_home.php");
     }
     else{
-        echo 'Username or password is invalid';
+        echo "<p class=\"error\" > Invalid Username Or Password</p>";
     }
 }
  ?>
